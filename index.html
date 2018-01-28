@@ -66,6 +66,188 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/27/hexo/" class="article-date">
+  <time datetime="2018-01-26T15:14:37.000Z" itemprop="datePublished">2018-01-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/27/hexo/">hexo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Git Page로 정적 페이지 Hosting하기<br>Git Page를 통해 손쉽게 USERNAME.github.io 도메인을 통해 정적 페이지를 호스팅(Hosting) 할 수가 있습니다.</p>
+<h3 id="Github-Repository-생성하기"><a href="#Github-Repository-생성하기" class="headerlink" title="Github Repository 생성하기"></a>Github Repository 생성하기</h3><p>먼저 Github에 가입한 후에 아래와 같은 순서로 Repository를 생성합니다.</p>
+<ul>
+<li>New Repository, Repository 이름은 USERNAME.github.io</li>
+<li>USERNAME 은 Github의 가입시에 사용자의 username을 입력한다</li>
+<li>Public / Private 중 Public 선택</li>
+<li>Create Repository 버튼을 통해 Repository 생성</li>
+</ul>
+<h3 id="Clone-the-repository"><a href="#Clone-the-repository" class="headerlink" title="Clone the repository"></a>Clone the repository</h3><p>Github Repository 생성 이후에는 아래의 Command Line을 순차적으로 실행한다. 먼저 생성한 Repository를 로컬에 복사한다</p>
+<p>$ git clone <a href="https://github.com/username/username.github.io" target="_blank" rel="noopener">https://github.com/username/username.github.io</a><br>Terminal 환경이 익숙하지 않다면 아래의 링크에서 Windows, Mac 운영체제별 클라이언트 프로그램을 통한 Step을 소개하고 있다.<br><a href="https://pages.github.com/" target="_blank" rel="noopener">https://pages.github.com/</a></p>
+<h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>root 디렉토리에 index.html 파일을 생성</p>
+<p>$ cd username.github.io<br>$ echo “Hello World” &gt; index.html</p>
+<h3 id="Push-it"><a href="#Push-it" class="headerlink" title="Push it"></a>Push it</h3><p>Remote 저장소에 변경내역을 Push 한다</p>
+<p>$ git add –all<br>$ git commit -m “Initial commit”<br>$ git push -u origin master</p>
+<h3 id="It’s-done"><a href="#It’s-done" class="headerlink" title="It’s done!"></a>It’s done!</h3><p>아주 손쉽게 여러분의 웹페이지를 하나 만들었다. 이제는 브라우저에서 정상적으로 <a href="https://USERNAME.github.io" target="_blank" rel="noopener">https://USERNAME.github.io</a> 에 접속되는지 확인 한다.</p>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>Hexo는 Jekyll와 함께 대표적으로 정적 페이지를 쉽게 만들 수 있도록 도와주는 서비스이다. 두 서비스 역시 블로그 지향적인 서비스이며 Hexo의 경우에는 npm을 통해 쉽게 설치가 가능하고 한 줄의 Command Line을 통해 Github에 바로 배포 할 수 있으며, Jekyll과 마찬가지로 다양한 플러그인과 테마를 지원하고 있다</p>
+<p>A fast, simple &amp; powerful blog framework</p>
+<h3 id="설치-전-준비"><a href="#설치-전-준비" class="headerlink" title="설치 전 준비"></a>설치 전 준비</h3><p>Hexo를 이용하기 위해서는 먼저 아래의 구성 요소들이 사전에 설치가 되어 있어야 한다. 이미 설치가 되어 있다면 생략해도 좋다.</p>
+<p>Node.js<br>Git</p>
+<h3 id="Hexo-CLI-설치-및-블로그-생성"><a href="#Hexo-CLI-설치-및-블로그-생성" class="headerlink" title="Hexo CLI 설치 및 블로그 생성"></a>Hexo CLI 설치 및 블로그 생성</h3><p>$ npm install hexo-cli -g<br>$ hexo init blog<br>$ cd blog<br>$ npm install</p>
+<h3 id="설정파일-업데이트"><a href="#설정파일-업데이트" class="headerlink" title="설정파일 업데이트"></a>설정파일 업데이트</h3><p>Command Line을 통해 Hexo를 설치하고 블로그 생성이 완료가 되면 root 디렉토리에 _config.yml 이라는 설정파일이 생성이 되는데 이 곳에 블로그에 대한 대부분의 설정을 할 수 있다. 이 중 중요한 설정 요소들을 소개하도록 하겠다. 나머지 설정 값에 대한 자세한 정보는 Hexo의 Document를 통해 확인이 가능하다.</p>
+<p>Documentation - <a href="https://hexo.io/docs/" target="_blank" rel="noopener">https://hexo.io/docs/</a></p>
+<h3 id="Site-정보"><a href="#Site-정보" class="headerlink" title="Site 정보"></a>Site 정보</h3><p>블로그의 이름과 간략한 소개등을 수정 할 수 있다</p>
+<p>title: 안녕 프로그래밍<br>subtitle: 모두가 프로그래밍에서 자유로워지는 그 날까지<br>description:<br>author: Minhyeok Jung</p>
+<h3 id="URL-정보"><a href="#URL-정보" class="headerlink" title="URL 정보"></a>URL 정보</h3><p>블로그 URL정보를 설정 할 수 있다</p>
+<p>url: <a href="https://USERNAME.github.io" target="_blank" rel="noopener">https://USERNAME.github.io</a><br>root: /<br>permalink: :year/:month/:day/:title/<br>permalink_defaults:<br>만약 본인의 Custom Domain을 적용하고 싶다면 url값은 이후에 Custom Domain 설정시 CNAME 파일을 생성 할 때도 참조한다.</p>
+<h3 id="Github-정보"><a href="#Github-정보" class="headerlink" title="Github 정보"></a>Github 정보</h3><p>자신의 Git Page의 Repository 정보를 입력하면 이후에 손쉽게 배포가 가능하다.</p>
+<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><p>deploy:<br>  type: git<br>  repo: <a href="https://stunstunstun@github.com/holaxapps/holaxapps.github.io" target="_blank" rel="noopener">https://stunstunstun@github.com/holaxapps/holaxapps.github.io</a></p>
+<h1 id="로컬에서-테스트"><a href="#로컬에서-테스트" class="headerlink" title="로컬에서 테스트"></a>로컬에서 테스트</h1><p>기본적인 설정이 완료가 되면 아래의 Command Line을 통해 로컬에서 서버를 구동 할 수 있다.</p>
+<p>$ hexo server<br>서버가 구동이 되면 아래의 주소를 통해 브라우저에서 블로그에 접속 할 수 있다.</p>
+<p><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<h1 id="Github에-배포하기"><a href="#Github에-배포하기" class="headerlink" title="Github에 배포하기"></a>Github에 배포하기</h1><p>로컬에서 정상적으로 블로그에 접속이 되었다면 이미 생성한 Github Page Repository에 손쉽게 배포가 가능하다.</p>
+<h3 id="Hexo-설정을-통해-정적-리소스-생성하기"><a href="#Hexo-설정을-통해-정적-리소스-생성하기" class="headerlink" title="Hexo 설정을 통해 정적 리소스 생성하기"></a>Hexo 설정을 통해 정적 리소스 생성하기</h3><p>$ hexo generate</p>
+<h3 id="배포하기"><a href="#배포하기" class="headerlink" title="배포하기"></a>배포하기</h3><p>$ hexo deploy</p>
+<h3 id="아래와-같이-Generate와-Deploy를-동시에-실행-할-수도-있다"><a href="#아래와-같이-Generate와-Deploy를-동시에-실행-할-수도-있다" class="headerlink" title="아래와 같이 Generate와 Deploy를 동시에 실행 할 수도 있다"></a>아래와 같이 Generate와 Deploy를 동시에 실행 할 수도 있다</h3><p>$ hexo deploy –generate<br>배포가 완료가 되면 브라우저에서 USERNAME.github.io로 접속해 정상적으로 배포가 되었는지 확인한다.</p>
+<h3 id="주의사항"><a href="#주의사항" class="headerlink" title="주의사항"></a>주의사항</h3><p>간혹 hexo의 deploy기능을 통해 정상적으로 배포가 되었음에도 불구하고 페이지가 업데이트 되지 않는 현상이 있는데, 이 경우에는 아래와 같이 페이지를 clean후에 배포를 하면 해결된다.</p>
+<p>$ hexo clean<br>$ hexo deploy –generate</p>
+<h1 id="테마-적용하기"><a href="#테마-적용하기" class="headerlink" title="테마 적용하기"></a>테마 적용하기</h1><p>USERNAME.github.io를 통해 성공적으로 블로그 접속이 되었다면, 멋진 디자인을 적용한 테마(Theme)를 적용하고 싶을 것이다. Hexo에서는 아래의 페이지에서 다양한 Theme가 적용된 페이지를 소개하고 있다.</p>
+<p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></p>
+<p>대부분의 Theme 페이지에서는 Github 링크가 포함되어 있는데 Theme를 적용하기 위한 자세한 설명을 포함하고 있다. 안녕 프로그래밍은 자체 제작한 hexo-theme-chiangmai 라는 Theme를 사용하고 있다.</p>
+<p><a href="https://github.com/stunstunstun/hexo-theme-chiangmai" target="_blank" rel="noopener">https://github.com/stunstunstun/hexo-theme-chiangmai</a></p>
+<p>Theme를 적용하기 위해서는 hexo-theme-chiangmai Github 페이지에서 자세한 내용을 확인 할 수 있다. 주의사항으로는 Theme를 적용하기 위해서는 아래와 같이 Repository 상태를 clean한 이후에 재배포 해야만 한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo deploy --generate</span><br></pre></td></tr></table></figure></p>
+<h3 id="새-포스트-만들기"><a href="#새-포스트-만들기" class="headerlink" title="새 포스트 만들기"></a>새 포스트 만들기</h3><p>$ hexo new post [post_name]</p>
+<h3 id="예제"><a href="#예제" class="headerlink" title="예제"></a>예제</h3><p>$ hexo new post github-page-and-hexo</p>
+<h3 id="아래와-같은-경로에-Markdown-문서가-생성-된다"><a href="#아래와-같은-경로에-Markdown-문서가-생성-된다" class="headerlink" title="아래와 같은 경로에 Markdown 문서가 생성 된다"></a>아래와 같은 경로에 Markdown 문서가 생성 된다</h3><p>ㄴ source<br>   ㄴ _posts</p>
+<pre><code>- github-page-and-hexo.md
+</code></pre><h3 id="github-page-and-hexo-md-에서-아래와-같이-포스트의-제목을-수정-할-수-있다"><a href="#github-page-and-hexo-md-에서-아래와-같이-포스트의-제목을-수정-할-수-있다" class="headerlink" title="github-page-and-hexo.md 에서 아래와 같이 포스트의 제목을 수정 할 수 있다"></a>github-page-and-hexo.md 에서 아래와 같이 포스트의 제목을 수정 할 수 있다</h3><hr>
+<p>title: Github Page와 Hexo를 통해 30분만에 기술 블로그 만들기</p>
+<h2 id="date-2017-04-16-22-37-53"><a href="#date-2017-04-16-22-37-53" class="headerlink" title="date: 2017-04-16 22:37:53"></a>date: 2017-04-16 22:37:53</h2><p>Github Markdown Guide<br>Markdown 문서가 생소하다면 아래의 링크를 확인하자</p>
+<p><a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener">https://guides.github.com/features/mastering-markdown/</a></p>
+<h1 id="체크리스트"><a href="#체크리스트" class="headerlink" title="체크리스트"></a>체크리스트</h1><p>지금까지 GitHub Page와 Hexo를 통해서 블로그를 개설하는 과정을 살펴보았는데요, 이 과정에서 소소한 시행 착오를 겪었습니다. 만약 저와 같은 동일한 이슈가 재현이 됐을 때의 해결 방법을 안내하는 것을 마지막으로 이 글을 마치도록 할께요.</p>
+<h3 id="Theme를-변경하고-배포시에-적용이-되지-않는-이슈"><a href="#Theme를-변경하고-배포시에-적용이-되지-않는-이슈" class="headerlink" title="Theme를 변경하고 배포시에 적용이 되지 않는 이슈"></a>Theme를 변경하고 배포시에 적용이 되지 않는 이슈</h3><p>이 경우에는 Hexo를 clean 하고 재배포를 합니다.</p>
+<p>$ hexo clean<br>$ hexo deploy –generate</p>
+<h3 id="배포시에-아래와-같은-에러메세지와-함께-배포가-되지-않는-이슈"><a href="#배포시에-아래와-같은-에러메세지와-함께-배포가-되지-않는-이슈" class="headerlink" title="배포시에 아래와 같은 에러메세지와 함께 배포가 되지 않는 이슈"></a>배포시에 아래와 같은 에러메세지와 함께 배포가 되지 않는 이슈</h3><p>ERROR Deployer not found: git<br>hexo-deployer-git 플러그인 설치</p>
+<p>npm install hexo-deployer-git –save<br>_config.yml에 플러그인 설정</p>
+<p>plugins:</p>
+<ul>
+<li>hexo-deployer-git</li>
+</ul>
+<p>본 내용은 하기 링크로부터 참조 되었습니다.<br><a href="https://www.holaxprogramming.com/2017/04/16/github-page-and-hexo/" target="_blank" rel="noopener">https://www.holaxprogramming.com/2017/04/16/github-page-and-hexo/</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shin-beomchul.github.io/2018/01/27/hexo/" data-id="cjcz5oahw0004v6sc54ce4mal" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-kotlin-01-Syntax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/23/kotlin-01-Syntax/" class="article-date">
+  <time datetime="2018-01-23T13:49:59.000Z" itemprop="datePublished">2018-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/23/kotlin-01-Syntax/">코틀린 Week1-Syntax</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#널 안전성</p>
+<h1 id="가변-불변"><a href="#가변-불변" class="headerlink" title="가변 불변"></a>가변 불변</h1><p>val == final int<br>var == int </p>
+<h1 id="콜렉션-가변-불변"><a href="#콜렉션-가변-불변" class="headerlink" title="콜렉션 가변 불변"></a>콜렉션 가변 불변</h1><p>콜렉션의 가변/ 불변 여부는 인터페이스에 따라 구분.<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//수정 불가 콜렉션</span></span><br><span class="line"><span class="keyword">val</span> myListInstance : List&lt;String&gt; =listOf(<span class="string">"god"</span>,<span class="string">"beom"</span>,<span class="string">"chul"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//수정 가능 콜렉션</span></span><br><span class="line"><span class="keyword">val</span> myListInstance : MutableList&lt;String&gt; =listOf(<span class="string">"god"</span>,<span class="string">"beom"</span>,<span class="string">"chul"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="SAM-단일-함수형-인터페이스"><a href="#SAM-단일-함수형-인터페이스" class="headerlink" title="SAM == 단일 함수형 인터페이스"></a>SAM == 단일 함수형 인터페이스</h1><p>-람다</p>
+<h1 id="스트림-API-지원"><a href="#스트림-API-지원" class="headerlink" title="스트림 API 지원"></a>스트림 API 지원</h1><p> 스트림 &gt;= API26<br>  표준 라이브러리 == Any API<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> items = listOf(<span class="number">10</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>)</span><br><span class="line"><span class="keyword">val</span> filterAndSum = items.filter&#123;it % <span class="number">2</span> ==<span class="number">0</span>&#125;.sum()</span><br></pre></td></tr></table></figure></p>
+<h1 id="값-및-변수-선언"><a href="#값-및-변수-선언" class="headerlink" title="값 및 변수 선언"></a>값 및 변수 선언</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//String 타입을 갖는 값 a선언</span></span><br><span class="line"> <span class="keyword">val</span> a:String = <span class="string">"foo"</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">//타입추론</span></span><br><span class="line">vaㅣ typleLess =<span class="string">"God"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//선언 시 value를 할당하지 않으면 타입 명시 해야함.(값으로 추론)</span></span><br><span class="line"><span class="keyword">val</span> b : String</span><br><span class="line">b=<span class="string">"beom"</span></span><br><span class="line">b=<span class="string">"Chul"</span> <span class="comment">//Error -&gt; Final ==val</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//var 변경 가능</span></span><br><span class="line"><span class="keyword">var</span> c : <span class="built_in">Int</span> =<span class="number">0</span></span><br><span class="line">c+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h1 id="함수-선언"><a href="#함수-선언" class="headerlink" title="함수 선언"></a>함수 선언</h1><p>Unit == void<br>Unit 생략 가능<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">HelloPrinter</span><span class="params">(name:<span class="type">String</span>)</span></span> :<span class="built_in">Unit</span>&#123;</span><br><span class="line">    println(<span class="string">"Hello, <span class="variable">$name</span> !!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">HelloPrinter</span><span class="params">(name:<span class="type">String</span>)</span></span>&#123;</span><br><span class="line">    println(<span class="string">"Hello, <span class="variable">$name</span> !!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">sum</span><span class="params">(a:<span class="type">Int</span>, b:<span class="type">Int</span>)</span></span>:<span class="built_in">Int</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="클래스-및-인터페이스-선언"><a href="#클래스-및-인터페이스-선언" class="headerlink" title="클래스 및 인터페이스 선언"></a>클래스 및 인터페이스 선언</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**클래스*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span></span>&#123;</span><br><span class="line">    <span class="keyword">val</span> foo:String = <span class="string">"foo"</span> <span class="comment">// 멤버변수</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**인터페이스*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">highOrder</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">filter</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h1><p> if == java if<br> -&gt; when Better</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">max</span><span class="params">(a:<span class="type">Int</span> , b:<span class="type">Int</span>)</span></span> :<span class="built_in">Int</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(a&gt;b)&#123;</span><br><span class="line">     <span class="keyword">return</span> a</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="when"><a href="#when" class="headerlink" title="when"></a>when</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">NumberToString</span><span class="params">(number:<span class="type">Int</span>)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">when</span>(number)&#123;</span><br><span class="line">        <span class="number">1</span>-&gt; println(<span class="string">"일"</span>)</span><br><span class="line">        <span class="number">2</span>-&gt; println(<span class="string">"이"</span>)</span><br><span class="line">        <span class="keyword">else</span> -&gt; println(<span class="string">"1도 아니고 2도 아닌 값들입니다."</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 잘못된 코드</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">NumberToString</span><span class="params">(number)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">when</span>(number)&#123;</span><br><span class="line">        <span class="number">1</span>-&gt; println(<span class="string">"일"</span>)</span><br><span class="line">        <span class="number">2</span>-&gt; println(<span class="string">"이"</span>)</span><br><span class="line">        <span class="keyword">else</span> -&gt; println(<span class="string">"1도 아니고 2도 아닌 값들입니다."</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 타입을 추론 할 수 없음 선언과 동시에 value를 주던가, 타입을 명시해야 하기 때문</span></span><br></pre></td></tr></table></figure>
+<h1 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h1><p>인덱스 기반 for문 지원하지 않음. Only for-each 만 지원<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">val</span> items = listOf(<span class="string">"god"</span>,<span class="string">"Beom"</span>,<span class="string">"Chul"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//for   </span></span><br><span class="line">    <span class="keyword">for</span>(item <span class="keyword">in</span> items)&#123;</span><br><span class="line">        println(item)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//while</span></span><br><span class="line">    <span class="keyword">val</span> items = listOf(<span class="string">"god"</span>,<span class="string">"Beom"</span>,<span class="string">"Chul"</span>)</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">var</span> i =<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; items.size)&#123;</span><br><span class="line">        println(items[i])</span><br><span class="line">        <span class="comment">//println("Hello ! $&#123;items[i]&#125;") // 스트링과 조합 checkMe Point! </span></span><br><span class="line">        <span class="comment">//println("Hello ! $items")    </span></span><br><span class="line">        </span><br><span class="line">        i++</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shin-beomchul.github.io/2018/01/23/kotlin-01-Syntax/" data-id="cjcz5oahy0006v6scy3vanxew" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-markdown" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/23/markdown/" class="article-date">
+  <time datetime="2018-01-23T13:27:13.000Z" itemprop="datePublished">2018-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/23/markdown/">MarkDown 알아보기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="글자-크기"><a href="#글자-크기" class="headerlink" title="글자 크기"></a>글자 크기</h1><p> #으로 결정</p>
+<h1 id="코드-블럭"><a href="#코드-블럭" class="headerlink" title="코드 블럭"></a>코드 블럭</h1><h2 id="java"><a href="#java" class="headerlink" title="-java"></a>-java</h2><p>자바는 아래와 같이 표현됩니다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;)</span><br></pre></td></tr></table></figure></p>
+<h1 id="이미지"><a href="#이미지" class="headerlink" title="이미지"></a>이미지</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shin-beomchul.github.io/2018/01/23/markdown/" data-id="cjcz5oahx0005v6sc7iuy0zpr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Kotlin-Day1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/01/23/Kotlin-Day1/" class="article-date">
@@ -80,7 +262,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/23/Kotlin-Day1/">Kotlin-Day1</a>
+      <a class="article-title" href="/2018/01/23/Kotlin-Day1/">Kotlin 스터디 히스토리</a>
     </h1>
   
 
@@ -88,15 +270,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Syntax<br>타입추론<br>클래스<br>인터페이스<br>스태틱<br>뷰 바인딩<br>콜백 인터페이스</p>
-<p>스터디 모임 요일은 월요일.<br>5장까지는 토론 위주</p>
-<p>6장은 </p>
-<p>스터디 밀렸을 경우<br> 다음날 아침에 무조건 모인다.</p>
+        <p>18.1.23 Start Study</p>
+<p>중요 하다고 생각 되는 파트<br>Syntax<br>타입추론<br>클래스<br>인터페이스<br>스태틱<br>뷰 바인딩<br>콜백 인터페이스</p>
+<p>Rule 1  스터디 모임 요일은 월요일<br>Rule 2. 5장까지는 개인이 책 숙지 후 1주일 1회 모여 토론을 갖는다.<br>Rule 3. 6장부터는 예제 코드를 구성원과 함께 작업한다.<br>Rule 4. 업무 및 개인 사정상 스터디 밀렸을 경우 다음날 아침에 무조건 모인다.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/01/23/Kotlin-Day1/" data-id="cjcrmkggs0002tfscaxit1inr" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2018/01/23/Kotlin-Day1/" data-id="cjcz5oahv0003v6sc920xlbo2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2017/12/18/DI/" data-id="cjcrmkggn0000tfscryklpyq7" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2017/12/18/DI/" data-id="cjcz5oahu0002v6sc06clw42f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,17 +351,32 @@
 <li>구축된 이후로 유지 보수가 훨씬 쉽다.</li>
 <li>프로그램의 동작 흐름을 Presenter에서 확인 할 수 있다.</li>
 <li>View 의 인터페이스만 보고도 어떤 기능을 하는지 짐작 할 수 있다.</li>
+<li>View와 Model은 MainThread ,SubThread가 명확히 분리 되어 있다.<br>  : 자신이 작성하지 않은 코드나 여러명이서 작업한 코드가 거대해 지다보면 Ui Thread 에서 동작해야하는지, MainThread 에서 동작 해야하는지 모호해지는 경우가 있습니다. 대부분의 경우 경험상 추론이나 코드를 유심히 봐야 “아 이코드는 SubThread 에서 동작 해야하는구나” 라고 생각하며 코드를 수정 하는데 이런 불필요한 분석시간을 줄알 수 있다.</li>
 <li>Model이 분리 되 있으므로 재사용 하기 쉽다. </li>
 <li><p>학습되지 않았을때의 경우 오랜 시간이 걸릴뿐, 익숙해진 후 View 인터페이스를 정의 할때 부터<br>좀더 기능에 대한 1차적인 설계가 되서 오히려 코드가 복잡하고 거대해 질 경우 삽질 방지 효과가 뛰어남</p>
 <p>[단점]</p>
 </li>
 <li>최초 프로젝트 구축 비용이 많이 든다. </li>
+<li>강제된 인터페이스가 아니므로 급한 일정앞에 모호성과 귀찮음과 타협하여 MVP 패턴과 타협하게 됨.</li>
 </ul>
+<p>[모호성]<br> 프로그래밍 패턴에서의 모호성은 예전 부터 존재해 왔습니다.<br> Spring처럼 강제화된 MVC 패턴 인터페이스를 가지지 않는 이상, 프로그래밍 패턴을 적용한다는 것은 코드를 개발하는 사람에 따라 MVC,MVP MVVM 등 패턴을 적용한다 하더라도 각자 혹은 팀의 속성이 반영된 패턴으로 개발 될수 밖에 없습니다. 예를 들어 MVP Model-Presenter-View를 요약하면 UI 나 화면은 View에서 처리하고, Model은 DB 나 API를 통해 데이터를 가져오는 역할을 가지며 Presenter는 이 두개의 레이어를 관리 하는 패턴 이라고 하지만 Android에서의 adapter 같은 경우는 어느 레이어계층이 담당해야 할까요? 이미 Android에서의 ListAdpater는 특정 데이터를 UI로 가시화 하는 역할을 잘 담당하고 있는데 말입니다.<br> 제가 MVP패턴을 적용할때 Adapter의 인스턴스를 Presenter 가 가지고 있어야 할지, View 계층이 가지고 있어야 할지 모호 했습니다. </p>
+<p>그래서 다음과 같이 3가지 정도로 축소 되어 고민 했습니다.<br> <strong>Presenter 에서 인스턴스를 관리 할 경우 </strong></p>
+<ol>
+<li>Model로부터 Adapter 인스턴스에 Set </li>
+<li><p><strong>Activity 에서 인스턴스를 관리 할 경우 </strong></p>
+</li>
+</ol>
+<p> <strong>Activity,Presenter모두 에서 인스턴스를 관리 할 경우 </strong><br>(생성은 Avtivity , Presenter에게 Adpater 참조값 넘김.)</p>
+<ul>
+<li>View와 Presenter간 강한커플링이 발생.</li>
+<li>응집도 떨어짐. Adapter의 조작이 Presenter, View 모두에서 조작됨.</li>
+</ul>
+<p> 데이터</p>
 <h1 id="3-Fragment-마다-MVP-모델Set을-생성-할-것인가"><a href="#3-Fragment-마다-MVP-모델Set을-생성-할-것인가" class="headerlink" title="3. Fragment 마다 MVP 모델Set을 생성 할 것인가?"></a>3. Fragment 마다 MVP 모델Set을 생성 할 것인가?</h1><h1 id="4-Adapter들은-어떻게-처리-할것인가"><a href="#4-Adapter들은-어떻게-처리-할것인가" class="headerlink" title="4. Adapter들은 어떻게 처리 할것인가?"></a>4. Adapter들은 어떻게 처리 할것인가?</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2017/11/24/First-Post/" data-id="cjcrmkggq0001tfscu9z2ngs7" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2017/11/24/First-Post/" data-id="cjcz5oaho0000v6sck9njabxa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -225,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2017/11/20/hello-world/" data-id="cjcrmkggt0003tfsctt3jmur4" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2017/11/20/hello-world/" data-id="cjcz5oahs0001v6sco9lvjko4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -265,19 +461,23 @@
       <ul>
         
           <li>
-            <a href="/2018/01/23/Kotlin-Day1/">Kotlin-Day1</a>
+            <a href="/2018/01/27/hexo/">hexo</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/23/kotlin-01-Syntax/">코틀린 Week1-Syntax</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/23/markdown/">MarkDown 알아보기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/23/Kotlin-Day1/">Kotlin 스터디 히스토리</a>
           </li>
         
           <li>
             <a href="/2017/12/18/DI/">의존성 주입 Di Dagger2</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/24/First-Post/">MVP Vs MVC</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/20/hello-world/">Hello World</a>
           </li>
         
       </ul>

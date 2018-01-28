@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>코틀린 Week1-Syntax | GOD-BEOM Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#널 안전성 가변 불변val == final intvar == int  콜렉션 가변 불변콜렉션의 가변/ 불변 여부는 인터페이스에 따라 구분.12345//수정 불가 콜렉션val myListInstance : List&amp;lt;String&amp;gt; =listOf(&quot;god&">
+<meta property="og:type" content="article">
+<meta property="og:title" content="코틀린 Week1-Syntax">
+<meta property="og:url" content="https://shin-beomchul.github.io/2018/01/23/kotlin-01-Syntax/index.html">
+<meta property="og:site_name" content="GOD-BEOM Blog">
+<meta property="og:description" content="#널 안전성 가변 불변val == final intvar == int  콜렉션 가변 불변콜렉션의 가변/ 불변 여부는 인터페이스에 따라 구분.12345//수정 불가 콜렉션val myListInstance : List&amp;lt;String&amp;gt; =listOf(&quot;god&quot;,&quot;beom&quot;,&quot;chul&quot;)//수정 가능 콜렉션val myListInstance : Mutabl">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2018-01-28T08:40:37.135Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="코틀린 Week1-Syntax">
+<meta name="twitter:description" content="#널 안전성 가변 불변val == final intvar == int  콜렉션 가변 불변콜렉션의 가변/ 불변 여부는 인터페이스에 따라 구분.12345//수정 불가 콜렉션val myListInstance : List&amp;lt;String&amp;gt; =listOf(&quot;god&quot;,&quot;beom&quot;,&quot;chul&quot;)//수정 가능 콜렉션val myListInstance : Mutabl">
+  
+    <link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">GOD-BEOM Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">GOD BEOM ~</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://shin-beomchul.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-kotlin-01-Syntax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/23/kotlin-01-Syntax/" class="article-date">
+  <time datetime="2018-01-23T13:49:59.000Z" itemprop="datePublished">2018-01-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      코틀린 Week1-Syntax
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#널 안전성</p>
+<h1 id="가변-불변"><a href="#가변-불변" class="headerlink" title="가변 불변"></a>가변 불변</h1><p>val == final int<br>var == int </p>
+<h1 id="콜렉션-가변-불변"><a href="#콜렉션-가변-불변" class="headerlink" title="콜렉션 가변 불변"></a>콜렉션 가변 불변</h1><p>콜렉션의 가변/ 불변 여부는 인터페이스에 따라 구분.<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//수정 불가 콜렉션</span></span><br><span class="line"><span class="keyword">val</span> myListInstance : List&lt;String&gt; =listOf(<span class="string">"god"</span>,<span class="string">"beom"</span>,<span class="string">"chul"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//수정 가능 콜렉션</span></span><br><span class="line"><span class="keyword">val</span> myListInstance : MutableList&lt;String&gt; =listOf(<span class="string">"god"</span>,<span class="string">"beom"</span>,<span class="string">"chul"</span>)</span><br></pre></td></tr></table></figure></p>
+<h1 id="SAM-단일-함수형-인터페이스"><a href="#SAM-단일-함수형-인터페이스" class="headerlink" title="SAM == 단일 함수형 인터페이스"></a>SAM == 단일 함수형 인터페이스</h1><p>-람다</p>
+<h1 id="스트림-API-지원"><a href="#스트림-API-지원" class="headerlink" title="스트림 API 지원"></a>스트림 API 지원</h1><p> 스트림 &gt;= API26<br>  표준 라이브러리 == Any API<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> items = listOf(<span class="number">10</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>)</span><br><span class="line"><span class="keyword">val</span> filterAndSum = items.filter&#123;it % <span class="number">2</span> ==<span class="number">0</span>&#125;.sum()</span><br></pre></td></tr></table></figure></p>
+<h1 id="값-및-변수-선언"><a href="#값-및-변수-선언" class="headerlink" title="값 및 변수 선언"></a>값 및 변수 선언</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//String 타입을 갖는 값 a선언</span></span><br><span class="line"> <span class="keyword">val</span> a:String = <span class="string">"foo"</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">//타입추론</span></span><br><span class="line">vaㅣ typleLess =<span class="string">"God"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//선언 시 value를 할당하지 않으면 타입 명시 해야함.(값으로 추론)</span></span><br><span class="line"><span class="keyword">val</span> b : String</span><br><span class="line">b=<span class="string">"beom"</span></span><br><span class="line">b=<span class="string">"Chul"</span> <span class="comment">//Error -&gt; Final ==val</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//var 변경 가능</span></span><br><span class="line"><span class="keyword">var</span> c : <span class="built_in">Int</span> =<span class="number">0</span></span><br><span class="line">c+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h1 id="함수-선언"><a href="#함수-선언" class="headerlink" title="함수 선언"></a>함수 선언</h1><p>Unit == void<br>Unit 생략 가능<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">HelloPrinter</span><span class="params">(name:<span class="type">String</span>)</span></span> :<span class="built_in">Unit</span>&#123;</span><br><span class="line">    println(<span class="string">"Hello, <span class="variable">$name</span> !!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">HelloPrinter</span><span class="params">(name:<span class="type">String</span>)</span></span>&#123;</span><br><span class="line">    println(<span class="string">"Hello, <span class="variable">$name</span> !!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">sum</span><span class="params">(a:<span class="type">Int</span>, b:<span class="type">Int</span>)</span></span>:<span class="built_in">Int</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="클래스-및-인터페이스-선언"><a href="#클래스-및-인터페이스-선언" class="headerlink" title="클래스 및 인터페이스 선언"></a>클래스 및 인터페이스 선언</h1><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**클래스*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span></span>&#123;</span><br><span class="line">    <span class="keyword">val</span> foo:String = <span class="string">"foo"</span> <span class="comment">// 멤버변수</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**인터페이스*/</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">highOrder</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">filter</span><span class="params">()</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h1><p> if == java if<br> -&gt; when Better</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">max</span><span class="params">(a:<span class="type">Int</span> , b:<span class="type">Int</span>)</span></span> :<span class="built_in">Int</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(a&gt;b)&#123;</span><br><span class="line">     <span class="keyword">return</span> a</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="when"><a href="#when" class="headerlink" title="when"></a>when</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">NumberToString</span><span class="params">(number:<span class="type">Int</span>)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">when</span>(number)&#123;</span><br><span class="line">        <span class="number">1</span>-&gt; println(<span class="string">"일"</span>)</span><br><span class="line">        <span class="number">2</span>-&gt; println(<span class="string">"이"</span>)</span><br><span class="line">        <span class="keyword">else</span> -&gt; println(<span class="string">"1도 아니고 2도 아닌 값들입니다."</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 잘못된 코드</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">NumberToString</span><span class="params">(number)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">when</span>(number)&#123;</span><br><span class="line">        <span class="number">1</span>-&gt; println(<span class="string">"일"</span>)</span><br><span class="line">        <span class="number">2</span>-&gt; println(<span class="string">"이"</span>)</span><br><span class="line">        <span class="keyword">else</span> -&gt; println(<span class="string">"1도 아니고 2도 아닌 값들입니다."</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 타입을 추론 할 수 없음 선언과 동시에 value를 주던가, 타입을 명시해야 하기 때문</span></span><br></pre></td></tr></table></figure>
+<h1 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h1><p>인덱스 기반 for문 지원하지 않음. Only for-each 만 지원<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">val</span> items = listOf(<span class="string">"god"</span>,<span class="string">"Beom"</span>,<span class="string">"Chul"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//for   </span></span><br><span class="line">    <span class="keyword">for</span>(item <span class="keyword">in</span> items)&#123;</span><br><span class="line">        println(item)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//while</span></span><br><span class="line">    <span class="keyword">val</span> items = listOf(<span class="string">"god"</span>,<span class="string">"Beom"</span>,<span class="string">"Chul"</span>)</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">var</span> i =<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; items.size)&#123;</span><br><span class="line">        println(items[i])</span><br><span class="line">        <span class="comment">//println("Hello ! $&#123;items[i]&#125;") // 스트링과 조합 checkMe Point! </span></span><br><span class="line">        <span class="comment">//println("Hello ! $items")    </span></span><br><span class="line">        </span><br><span class="line">        i++</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shin-beomchul.github.io/2018/01/23/kotlin-01-Syntax/" data-id="cjcz5oahy0006v6scy3vanxew" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/27/hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          hexo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/23/markdown/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MarkDown 알아보기</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">12월 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/01/27/hexo/">hexo</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/23/kotlin-01-Syntax/">코틀린 Week1-Syntax</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/23/markdown/">MarkDown 알아보기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/01/23/Kotlin-Day1/">Kotlin 스터디 히스토리</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/18/DI/">의존성 주입 Di Dagger2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Beom Chul<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
