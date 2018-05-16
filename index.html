@@ -66,47 +66,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-ios-closure-class-tuple" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/05/16/ios-closure-class-tuple/" class="article-date">
-  <time datetime="2018-05-16T06:16:46.000Z" itemprop="datePublished">2018-05-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/16/ios-closure-class-tuple/">ios-클로져, 클래스,구조체,튜플</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>함수</strong><br>함수의 반환타입 지정: -&gt;<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hello</span><span class="params">(name:String)</span></span> -&gt; <span class="type">String</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> retStr = <span class="string">""</span></span><br><span class="line">  <span class="keyword">return</span> string +=(name)님 안녕하세요!</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Swift 에서 함수를 호출 할때 파라미터 이름을 함께 써줘야함</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">hello(name: <span class="string">"신범철"</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>함수 호출 시 이름을 바꾸고 싶다.</strong><br> <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> hello(mycallName: <span class="string">"신범철"</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hello</span><span class="params">(mycallName name: String)</span></span> &#123;</span><br><span class="line"><span class="comment">// 함수 내부에서는 `name`을 사용.</span></span><br><span class="line"><span class="built_in">print</span>(name)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p> <strong>함수 호출 시 생략 하고 싶다</strong><br> <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> hello(<span class="string">"신범철"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hello</span><span class="params">(<span class="number">_</span> name: String)</span></span> &#123;</span><br><span class="line"><span class="comment">// 함수 내부에서는 `name`을 사용.</span></span><br><span class="line"><span class="built_in">print</span>(name)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/05/16/ios-closure-class-tuple/" data-id="cjh8qrey4000462scv03yu400" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-ios-변수-옵셔널" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/16/ios-변수-옵셔널/" class="article-date">
@@ -144,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/05/16/ios-변수-옵셔널/" data-id="cjh8qrey8000762sc1z2itcl1" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2018/05/16/ios-변수-옵셔널/" data-id="cjh8rv7fx0002prscpahsf3ps" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
@@ -242,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/01/27/hexo/" data-id="cjh8qrey7000662sc4prldm2a" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2018/01/27/hexo/" data-id="cjh8rv7g30006prscd9u0wbe5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -290,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/01/23/kotlin-01-Syntax/" data-id="cjh8qrey5000562scdwurywix" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2018/01/23/kotlin-01-Syntax/" data-id="cjh8rv7fy0003prsctxm6x82v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -328,46 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/01/23/markdown/" data-id="cjh8qrey9000862scozh6x20w" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Kotlin-Day1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/23/Kotlin-Day1/" class="article-date">
-  <time datetime="2018-01-23T06:59:19.000Z" itemprop="datePublished">2018-01-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/23/Kotlin-Day1/">Kotlin 스터디 히스토리</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>18.1.23 Start Study</p>
-<p>중요 하다고 생각 되는 파트<br>Syntax<br>타입추론<br>클래스<br>인터페이스<br>스태틱<br>뷰 바인딩<br>콜백 인터페이스</p>
-<p>Rule 1  스터디 모임 요일은 월요일<br>Rule 2. 5장까지는 개인이 책 숙지 후 1주일 1회 모여 토론을 갖는다.<br>Rule 3. 6장부터는 예제 코드를 구성원과 함께 작업한다.<br>Rule 4. 업무 및 개인 사정상 스터디 밀렸을 경우 다음날 아침에 무조건 모인다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/01/23/Kotlin-Day1/" data-id="cjh8qrey2000262scv5ebg0de" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2018/01/23/markdown/" data-id="cjh8rv7g40007prscp3e2e0jf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -403,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2017/12/18/DI/" data-id="cjh8qrexw000062scn6nxw68s" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2017/12/18/DI/" data-id="cjh8rv7fv0001prscwhcwnx3r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -413,9 +333,9 @@
 
 
   
-    <article id="post-First-Post" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-mvp-적용 후 느낀점 " class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/24/First-Post/" class="article-date">
+    <a href="/2017/11/24/mvp-적용 후 느낀점 /" class="article-date">
   <time datetime="2017-11-24T00:47:16.000Z" itemprop="datePublished">2017-11-24</time>
 </a>
     
@@ -427,7 +347,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/24/First-Post/">MVP Vs MVC</a>
+      <a class="article-title" href="/2017/11/24/mvp-적용 후 느낀점 /">MVP Vs MVC</a>
     </h1>
   
 
@@ -468,9 +388,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2017/11/24/First-Post/" data-id="cjh8qrey0000162scnl6sr692" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2017/11/24/mvp-적용 후 느낀점 /" data-id="cjh8rv7g20005prsc1j4imhlx" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/작성중/">작성중</a></li></ul>
+
     </footer>
   </div>
   
@@ -513,7 +435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2017/11/20/hello-world/" data-id="cjh8qrey3000362sc7fahf1m9" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2017/11/20/hello-world/" data-id="cjh8rv7fq0000prsco2gj0t07" class="article-share-link">Share</a>
       
       
     </footer>
@@ -535,7 +457,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/작성중/">작성중</a></li></ul>
     </div>
   </div>
 
@@ -545,7 +467,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ios/" style="font-size: 10px;">ios</a>
+      <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/작성중/" style="font-size: 10px;">작성중</a>
     </div>
   </div>
 
@@ -567,10 +489,6 @@
       <ul>
         
           <li>
-            <a href="/2018/05/16/ios-closure-class-tuple/">ios-클로져, 클래스,구조체,튜플</a>
-          </li>
-        
-          <li>
             <a href="/2018/05/16/ios-변수-옵셔널/">start IOS - 변수,옵셔널</a>
           </li>
         
@@ -584,6 +502,10 @@
         
           <li>
             <a href="/2018/01/23/markdown/">MarkDown 알아보기</a>
+          </li>
+        
+          <li>
+            <a href="/2017/12/18/DI/">의존성 주입 Di Dagger2</a>
           </li>
         
       </ul>
