@@ -13,7 +13,7 @@
 <meta property="og:description" content="1. 프로젝트 적용 후 느낀 점 [장점]  구축된 이후로 유지 보수가 훨씬 쉽다. 프로그램의 동작 흐름을 Presenter에서 확인 할 수 있다. View 의 인터페이스만 보고도 어떤 기능을 하는지 짐작 할 수 있다. View와 Model은 MainThread ,SubThread가 명확히 분리 되어 있다.  : 자신이 작성하지 않은 코드나 여러명이서 작업">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://i2.wp.com/www.tinmegali.com/wp-content/uploads/2016/03/MVP_2-en.png?w=1024">
-<meta property="og:updated_time" content="2018-01-28T09:33:29.301Z">
+<meta property="og:updated_time" content="2018-02-14T07:46:01.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVP Vs MVC">
 <meta name="twitter:description" content="1. 프로젝트 적용 후 느낀 점 [장점]  구축된 이후로 유지 보수가 훨씬 쉽다. 프로그램의 동작 흐름을 Presenter에서 확인 할 수 있다. View 의 인터페이스만 보고도 어떤 기능을 하는지 짐작 할 수 있다. View와 Model은 MainThread ,SubThread가 명확히 분리 되어 있다.  : 자신이 작성하지 않은 코드나 여러명이서 작업">
@@ -103,14 +103,16 @@
 <li><p>학습되지 않았을때의 경우 오랜 시간이 걸릴뿐, 익숙해진 후 View 인터페이스를 정의 할때 부터<br>좀더 기능에 대한 1차적인 설계가 되서 오히려 코드가 복잡하고 거대해 질 경우 삽질 방지 효과가 뛰어남</p>
 <p>[단점]</p>
 </li>
+<li>MVP표준이 없다. 팀원이 MVP를 이해하고 초기 브리핑 없이 개발하게 되면 각자의 아키텍쳐로 개발 될 수있다. </li>
 <li>최초 프로젝트 구축 비용이 많이 든다. </li>
 <li>강제된 인터페이스가 아니므로 급한 일정앞에 모호성과 귀찮음과 타협하여 MVP 패턴과 타협하게 됨.</li>
 </ul>
-<p>[모호성]<br> 프로그래밍 패턴에서의 모호성은 예전 부터 존재해 왔습니다.<br> Spring처럼 강제화된 MVC 패턴 인터페이스를 가지지 않는 이상, 프로그래밍 패턴을 적용한다는 것은 코드를 개발하는 사람에 따라 MVC,MVP MVVM 등 패턴을 적용한다 하더라도 각자 혹은 팀의 속성이 반영된 패턴으로 개발 될수 밖에 없습니다. 예를 들어 MVP Model-Presenter-View를 요약하면 UI 나 화면은 View에서 처리하고, Model은 DB 나 API를 통해 데이터를 가져오는 역할을 가지며 Presenter는 이 두개의 레이어를 관리 하는 패턴 이라고 하지만 Android에서의 adapter 같은 경우는 어느 레이어계층이 담당해야 할까요? 이미 Android에서의 ListAdpater는 특정 데이터를 UI로 가시화 하는 역할을 잘 담당하고 있는데 말입니다.<br> 제가 MVP패턴을 적용할때 Adapter의 인스턴스를 Presenter 가 가지고 있어야 할지, View 계층이 가지고 있어야 할지 모호 했습니다. </p>
-<p>그래서 다음과 같이 3가지 정도로 축소 되어 고민 했습니다.<br> <strong>Presenter 에서 인스턴스를 관리 할 경우 </strong></p>
+<p>[모호성]<br> 프로그래밍 패턴에서의 모호성은 예전 부터 존재해 왔습니다.<br> Spring처럼 강제화된 MVC 패턴 인터페이스를 가지지 않는 이상, 프로그래밍 패턴을 적용한다는 것은 코드를 개발하는 사람에 따라 MVC,MVP MVVM 등 패턴을 적용한다 하더라도 각자 혹은 팀의 속성이 반영된 패턴으로 개발 될수 밖에 없습니다. 예를 들어 MVP Model-Presenter-View를 요약하면 UI 나 화면은 View에서 처리하고, Model은 DB 나 API를 통해 데이터를 가져오는 역할을 가지며 Presenter는 이 두개의 레이어를 관리 하는 패턴 이라고 하지만 Android에서의 adapter 같은 경우는 어느 레이어계층이 담당해야 할까요? 이미 Android에서의 ListAdpater는 특정 데이터를 UI로 가시화 하는 역할을 잘 담당하고 있는데 말입니다.<br> 제가 MVP패턴을 적용할때 Adapter의 인스턴스를 Presenter 가 가지고 있어야 할지, View 계층이 가지고 있어야 할지 모호 했고 다음과 같은 모호함을 선택 해야 했습니다.</p>
+<p> <strong>Presenter 에서 인스턴스를 관리 할 경우 </strong></p>
 <ol>
 <li>Model로부터 Adapter 인스턴스에 Set </li>
-<li><p><strong>Activity 에서 인스턴스를 관리 할 경우 </strong></p>
+<li><p>Presenter 에서 View에게 알리지 않고 직접 변경</p>
+<p><strong>Activity 에서 인스턴스를 관리 할 경우 </strong></p>
 </li>
 </ol>
 <p> <strong>Activity,Presenter모두 에서 인스턴스를 관리 할 경우 </strong><br>(생성은 Avtivity , Presenter에게 Adpater 참조값 넘김.)</p>
@@ -123,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2017/11/24/First-Post/" data-id="cjcz5oaho0000v6sck9njabxa" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2017/11/24/First-Post/" data-id="cjh8qrey0000162scnl6sr692" class="article-share-link">Share</a>
       
       
     </footer>
@@ -160,15 +162,29 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ios/" style="font-size: 10px;">ios</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">12월 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">12월 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a></li></ul>
     </div>
   </div>
 
@@ -181,6 +197,14 @@
       <ul>
         
           <li>
+            <a href="/2018/05/16/ios-closure-class-tuple/">ios-클로져, 클래스,구조체,튜플</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/16/ios-변수-옵셔널/">start IOS - 변수,옵셔널</a>
+          </li>
+        
+          <li>
             <a href="/2018/01/27/hexo/">hexo</a>
           </li>
         
@@ -190,14 +214,6 @@
         
           <li>
             <a href="/2018/01/23/markdown/">MarkDown 알아보기</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/23/Kotlin-Day1/">Kotlin 스터디 히스토리</a>
-          </li>
-        
-          <li>
-            <a href="/2017/12/18/DI/">의존성 주입 Di Dagger2</a>
           </li>
         
       </ul>

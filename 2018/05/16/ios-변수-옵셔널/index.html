@@ -3,16 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>의존성 주입 Di Dagger2 | GOD-BEOM Blog</title>
+  <title>start IOS - 변수,옵셔널 | GOD-BEOM Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="의존성 주입 Di Dagger2">
-<meta property="og:url" content="https://shin-beomchul.github.io/2017/12/18/DI/index.html">
+  <meta name="description" content="목표 Swift의 변수 선언과 optional 의 개념 이해. Swift의 타입 안정성  엄격한 정적 타이핑 언어 (타입에 대한 엄격성) 옵셔널: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.  12var str:String = &quot;가나다&quot;  str =nil // ">
+<meta name="keywords" content="ios">
+<meta property="og:type" content="article">
+<meta property="og:title" content="start IOS - 변수,옵셔널">
+<meta property="og:url" content="https://shin-beomchul.github.io/2018/05/16/ios-변수-옵셔널/index.html">
 <meta property="og:site_name" content="GOD-BEOM Blog">
+<meta property="og:description" content="목표 Swift의 변수 선언과 optional 의 개념 이해. Swift의 타입 안정성  엄격한 정적 타이핑 언어 (타입에 대한 엄격성) 옵셔널: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.  12var str:String = &quot;가나다&quot;  str =nil // 컴퍼알 에러 ! 그럼 nil을 어떻게 넣느냐?: 옵셔널(?) 키워드를 변수를정의할때 붙힘.">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2017-12-18T05:19:26.066Z">
+<meta property="og:updated_time" content="2018-05-16T06:13:53.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="의존성 주입 Di Dagger2">
+<meta name="twitter:title" content="start IOS - 변수,옵셔널">
+<meta name="twitter:description" content="목표 Swift의 변수 선언과 optional 의 개념 이해. Swift의 타입 안정성  엄격한 정적 타이핑 언어 (타입에 대한 엄격성) 옵셔널: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.  12var str:String = &quot;가나다&quot;  str =nil // 컴퍼알 에러 ! 그럼 nil을 어떻게 넣느냐?: 옵셔널(?) 키워드를 변수를정의할때 붙힘.">
   
     <link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
   
@@ -65,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-DI" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ios-변수-옵셔널" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/12/18/DI/" class="article-date">
-  <time datetime="2017-12-18T05:16:55.000Z" itemprop="datePublished">2017-12-18</time>
+    <a href="/2018/05/16/ios-변수-옵셔널/" class="article-date">
+  <time datetime="2018-05-16T05:44:40.000Z" itemprop="datePublished">2018-05-16</time>
 </a>
     
   </div>
@@ -79,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      의존성 주입 Di Dagger2
+      start IOS - 변수,옵셔널
     </h1>
   
 
@@ -87,32 +91,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><strong>목표</strong><br> Swift의 변수 선언과 optional 의 개념 이해.</p>
+<p><strong>Swift의 타입 안정성</strong></p>
+<ul>
+<li>엄격한 정적 타이핑 언어 (타입에 대한 엄격성)</li>
+<li>옵셔널<br>: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str:<span class="type">String</span> = <span class="string">"가나다"</span> </span><br><span class="line"> str =<span class="literal">nil</span> <span class="comment">// 컴퍼알 에러 !</span></span><br></pre></td></tr></table></figure>
+<p>그럼 nil을 어떻게 넣느냐?<br>: 옵셔널(?) 키워드를 변수를정의할때 붙힘.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str:<span class="type">String</span>?</span><br><span class="line"></span><br><span class="line">str = <span class="string">"가나다"</span></span><br><span class="line"><span class="built_in">print</span>(str) <span class="comment">// 가나다 </span></span><br><span class="line"></span><br><span class="line">str = <span class="literal">nil</span>   </span><br><span class="line"><span class="built_in">print</span>(str) <span class="comment">// nil</span></span><br></pre></td></tr></table></figure>
+<p>옵셔널 변수는 일반 변수와 근본적으로 완전히 다름.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> optStr? =<span class="string">"옵셔널 스트링"</span></span><br><span class="line"><span class="keyword">let</span> ordnailStr = optStr <span class="comment">// 컴파일 에러</span></span><br></pre></td></tr></table></figure></p>
+<p>optStr은 실제 코드가 실행 되기 전까지 값이 있는지 알 수 없음.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2017/12/18/DI/" data-id="cjh8qrexw000062scn6nxw68s" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2018/05/16/ios-변수-옵셔널/" data-id="cjh8qrey8000762sc1z2itcl1" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/01/23/Kotlin-Day1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/16/ios-closure-class-tuple/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Kotlin 스터디 히스토리
+          ios-클로져, 클래스,구조체,튜플
         
       </div>
     </a>
   
   
-    <a href="/2017/11/24/First-Post/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/01/27/hexo/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">MVP Vs MVC</div>
+      <div class="article-nav-title">hexo</div>
     </a>
   
 </nav>
