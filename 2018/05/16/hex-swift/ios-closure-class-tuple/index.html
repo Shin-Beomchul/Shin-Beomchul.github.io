@@ -96,9 +96,9 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">hello(name: <span class="string">"신범철"</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>함수 호출 시 이름을 바꾸고 싶다.</strong><br> <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> hello(mycallName: <span class="string">"신범철"</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hello</span><span class="params">(mycallName name: String)</span></span> &#123;</span><br><span class="line"><span class="comment">// 함수 내부에서는 `name`을 사용.</span></span><br><span class="line"><span class="built_in">print</span>(name)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p> <strong>함수 호출 시 생략 하고 싶다</strong><br> <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> hello(<span class="string">"신범철"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">hello</span><span class="params">(<span class="number">_</span> name: String)</span></span> &#123;</span><br><span class="line"><span class="comment">// 함수 내부에서는 `name`을 사용.</span></span><br><span class="line"><span class="built_in">print</span>(name)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p> <strong>클래스</strong><br> <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</span><br><span class="line"> <span class="keyword">var</span> name: <span class="type">String</span>?</span><br><span class="line"> <span class="keyword">var</span> age: <span class="type">Int</span>?</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">func</span> <span class="title">simpleDescription</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> name = <span class="keyword">self</span>.name &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"dog <span class="subst">\(name)</span>"</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"dog No name"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> <strong>클래스</strong><br> <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</span><br><span class="line"> <span class="keyword">var</span> name: <span class="type">String</span>?</span><br><span class="line"> <span class="keyword">var</span> age: <span class="type">Int</span>?</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">func</span> <span class="title">simpleDescription</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> name = <span class="keyword">self</span>.name &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"dog \(name)"</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"dog No name"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p> <strong>구조체</strong></p>
- <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">struct</span> <span class="title">Coffee</span> </span>&#123;</span><br><span class="line"> <span class="keyword">var</span> name: <span class="type">String</span>?</span><br><span class="line"> <span class="keyword">var</span> size: <span class="type">String</span>?</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">func</span> <span class="title">simpleDescription</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> name = <span class="keyword">self</span>.name &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"☕️ <span class="subst">\(name)</span>"</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"☕️ No name"</span></span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">struct</span> <span class="title">Coffee</span> </span>&#123;</span><br><span class="line"> <span class="keyword">var</span> name: <span class="type">String</span>?</span><br><span class="line"> <span class="keyword">var</span> size: <span class="type">String</span>?</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">func</span> <span class="title">simpleDescription</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> name = <span class="keyword">self</span>.name &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"☕️ \(name)"</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"☕️ No name"</span></span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> <strong>튜플</strong><br> 배열과 비슷, 다른점은 크기가 고정 접근 할 때 [0] 대신 .0 으로 접근<br> : 구조체와 유사. 간단한 자료형을 만들때 구조체 대신 사용.</p>
 <p> 기본<br> <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> coffeeInfo = (<span class="string">"아메리카노"</span>, <span class="number">5100</span>)</span><br><span class="line">coffeeInfo.<span class="number">0</span> <span class="comment">//아메리카노</span></span><br><span class="line">coffeeInfo.<span class="number">1</span> <span class="comment">// 5100</span></span><br><span class="line">coffeeInfo.<span class="number">1</span> = <span class="number">5200</span></span><br></pre></td></tr></table></figure></p>
 <p> 이름이 있는 튜플</p>
@@ -125,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/05/16/hex-swift/ios-closure-class-tuple/" data-id="cjh9wppvm00075isca095f8o1" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2018/05/16/hex-swift/ios-closure-class-tuple/" data-id="cjhezmwyt000du5scaq64wdnc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -136,7 +136,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/05/17/hex-kotlin/kl-link/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/17/hex-kotlin/kt-link/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -167,7 +167,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kotlin/">kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/작성중/">작성중</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/세미나-기록/">세미나 기록</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/작성중/">작성중</a></li></ul>
     </div>
   </div>
 
@@ -177,7 +177,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/kotlin/" style="font-size: 10px;">kotlin</a> <a href="/tags/swift/" style="font-size: 20px;">swift</a> <a href="/tags/작성중/" style="font-size: 10px;">작성중</a>
+      <a href="/tags/IOS/" style="font-size: 10px;">IOS</a> <a href="/tags/Kotlin/" style="font-size: 20px;">Kotlin</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a> <a href="/tags/세미나-기록/" style="font-size: 10px;">세미나 기록</a> <a href="/tags/작성중/" style="font-size: 10px;">작성중</a>
     </div>
   </div>
 
@@ -199,23 +199,23 @@
       <ul>
         
           <li>
-            <a href="/2018/05/17/hex-kotlin/kl-link/">kotlin- 잘 정리된 link 모음</a>
+            <a href="/2018/05/18/etc-database/">사내 세미나  - MySQL Tips</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/18/hex-kotlin/kt-CallBack/">kotlin - 인터페이스없는 콜백</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/17/hex-IOS/ios-start/">ios시작</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/17/hex-kotlin/kt-link/">kotlin- 잘 정리된 link 모음</a>
           </li>
         
           <li>
             <a href="/2018/05/16/hex-swift/ios-closure-class-tuple/">ios-클로져, 클래스,구조체,튜플</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/16/hex-swift/ios-변수-옵셔널/">start IOS - 변수,옵셔널</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/27/hex-etc/hexo/">hexo</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/23/hex-kotlin/kl-01-Syntax/">코틀린 Week1-Syntax</a>
           </li>
         
       </ul>

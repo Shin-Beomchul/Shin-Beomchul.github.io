@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>start IOS - 변수,옵셔널 | GOD-BEOM Blog</title>
+  <title>ios시작 | GOD-BEOM Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="목표 Swift의 변수 선언과 optional 의 개념 이해. Swift의 타입 안정성  엄격한 정적 타이핑 언어 (타입에 대한 엄격성) 옵셔널: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.  12var str:String = &quot;가나다&quot;  str =nil // ">
-<meta name="keywords" content="swift">
+  <meta name="description" content="빌드  핸드폰 빌드 순서  빌드 시 인증서 확인 -&amp;gt; 인증서 프로비져닝 매칭 체크 -&amp;gt; 빌드   Success  인증서 프로젝트를 개발, 발드, 배포 할수 있는 인증서 인증서는 mac PC 에서 발급 할 수 있다. Case 1.  프로비져닝 :  기기에서 빌드 ">
+<meta name="keywords" content="IOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="start IOS - 변수,옵셔널">
-<meta property="og:url" content="https://shin-beomchul.github.io/2018/05/16/hex-swift/ios-변수-옵셔널/index.html">
+<meta property="og:title" content="ios시작">
+<meta property="og:url" content="https://shin-beomchul.github.io/2018/05/17/hex-IOS/ios-start/index.html">
 <meta property="og:site_name" content="GOD-BEOM Blog">
-<meta property="og:description" content="목표 Swift의 변수 선언과 optional 의 개념 이해. Swift의 타입 안정성  엄격한 정적 타이핑 언어 (타입에 대한 엄격성) 옵셔널: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.  12var str:String = &quot;가나다&quot;  str =nil // 컴퍼알 에러 ! 그럼 nil을 어떻게 넣느냐?: 옵셔널(?) 키워드를 변수를정의할때 붙힘.">
+<meta property="og:description" content="빌드  핸드폰 빌드 순서  빌드 시 인증서 확인 -&amp;gt; 인증서 프로비져닝 매칭 체크 -&amp;gt; 빌드   Success  인증서 프로젝트를 개발, 발드, 배포 할수 있는 인증서 인증서는 mac PC 에서 발급 할 수 있다. Case 1.  프로비져닝 :  기기에서 빌드 할 수 있는 권한을 가진 인증서. 위 인증서로 발급된 인증서와 쌍을 이룬다. Story">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-05-16T08:33:41.558Z">
+<meta property="og:updated_time" content="2018-05-18T07:11:09.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="start IOS - 변수,옵셔널">
-<meta name="twitter:description" content="목표 Swift의 변수 선언과 optional 의 개념 이해. Swift의 타입 안정성  엄격한 정적 타이핑 언어 (타입에 대한 엄격성) 옵셔널: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.  12var str:String = &quot;가나다&quot;  str =nil // 컴퍼알 에러 ! 그럼 nil을 어떻게 넣느냐?: 옵셔널(?) 키워드를 변수를정의할때 붙힘.">
+<meta name="twitter:title" content="ios시작">
+<meta name="twitter:description" content="빌드  핸드폰 빌드 순서  빌드 시 인증서 확인 -&amp;gt; 인증서 프로비져닝 매칭 체크 -&amp;gt; 빌드   Success  인증서 프로젝트를 개발, 발드, 배포 할수 있는 인증서 인증서는 mac PC 에서 발급 할 수 있다. Case 1.  프로비져닝 :  기기에서 빌드 할 수 있는 권한을 가진 인증서. 위 인증서로 발급된 인증서와 쌍을 이룬다. Story">
   
     <link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
   
@@ -69,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hex-swift/ios-변수-옵셔널" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hex-IOS/ios-start" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/16/hex-swift/ios-변수-옵셔널/" class="article-date">
-  <time datetime="2018-05-16T05:44:40.000Z" itemprop="datePublished">2018-05-16</time>
+    <a href="/2018/05/17/hex-IOS/ios-start/" class="article-date">
+  <time datetime="2018-05-17T04:32:47.000Z" itemprop="datePublished">2018-05-17</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      start IOS - 변수,옵셔널
+      ios시작
     </h1>
   
 
@@ -91,28 +91,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>목표</strong><br> Swift의 변수 선언과 optional 의 개념 이해.</p>
-<p><strong>Swift의 타입 안정성</strong></p>
+        <p>빌드 </p>
+<p><strong>핸드폰 빌드 순서</strong></p>
+<ol>
+<li>빌드 시 인증서 확인 -&gt; 인증서 프로비져닝 매칭 체크 -&gt; 빌드   Success</li>
+</ol>
+<p><strong>인증서</strong> 프로젝트를 개발, 발드, 배포 할수 있는 인증서</p>
+<p>인증서는 mac PC 에서 발급 할 수 있다.</p>
+<p>Case 1. </p>
+<p><strong>프로비져닝</strong> :  기기에서 빌드 할 수 있는 권한을 가진 인증서.<br> 위 인증서로 발급된 인증서와 쌍을 이룬다.</p>
+<p><strong>Story Board</strong></p>
 <ul>
-<li>엄격한 정적 타이핑 언어 (타입에 대한 엄격성)</li>
-<li>옵셔널<br>: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.</li>
+<li><p><strong>인터페이스 빌더</strong> : 드래그 앤 드랍으로 화면 구성</p>
+</li>
+<li><p><strong>Main.storyboard</strong>는 :앱에서의 전체 화면</p>
+</li>
 </ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str:<span class="type">String</span> = <span class="string">"가나다"</span> </span><br><span class="line"> str =<span class="literal">nil</span> <span class="comment">// 컴퍼알 에러 !</span></span><br></pre></td></tr></table></figure>
-<p>그럼 nil을 어떻게 넣느냐?<br>: 옵셔널(?) 키워드를 변수를정의할때 붙힘.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str:<span class="type">String</span>?</span><br><span class="line"></span><br><span class="line">str = <span class="string">"가나다"</span></span><br><span class="line"><span class="built_in">print</span>(str) <span class="comment">// 가나다 </span></span><br><span class="line"></span><br><span class="line">str = <span class="literal">nil</span>   </span><br><span class="line"><span class="built_in">print</span>(str) <span class="comment">// nil</span></span><br></pre></td></tr></table></figure>
-<p>옵셔널 변수는 일반 변수와 근본적으로 완전히 다름.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> optStr? =<span class="string">"옵셔널 스트링"</span></span><br><span class="line"><span class="keyword">let</span> ordnailStr = optStr <span class="comment">// 컴파일 에러</span></span><br></pre></td></tr></table></figure></p>
-<p>optStr은 실제 코드가 실행 되기 전까지 값이 있는지 알 수 없음.</p>
-<p>let : final<br>~~~swift</p>
-<p>var name = “Suyeol Jeon”<br>let birthyear = 1995</p>
-<p>birthyear = 1990 //error ! 컴파일 에러 </p>
+<ul>
+<li><p><strong>LaunchScreen.storyboard</strong> : 앱이 실행되기 전에 보이는 스플래시Splash 화면</p>
+</li>
+<li><p><strong>View Controller</strong>  : iOS 앱에서 사용되는 화면 단위 (간략히 이해하면)</p>
+</li>
+<li><p><strong>Auto Layout</strong>  : 의 위치와 크기를 절대 수치로 직접 넣지 않고, 관계만을 정의<br> : 제약Constraint 상하좌우 거리를 0으로 만드는 제약을 걸면 Full<br>   스토리보드에서는 핀Pin 버튼(pin)을 사용해서 오토 레이아웃 제약을 추가 </p>
+<pre><code>제약을 걸고 뷰를 마음대로 움직여도 반영되지 않음 (제약 &gt; 뷰배치)
+</code></pre></li>
+<li><p><strong>@IBOutlet</strong>  : 해당 키를 붙히면 라인넘버 확인 줄에 동그라미가 표시됨 . </p>
+<pre><code> 속성이 인터페이스 빌더와 연결되어 있는지 확인 
+ 연결 : 채워짐.
+ 연결되지 않음 : 빈 동그라미
+ **방법**  
+1. storyboard 열기
+2.뷰 클릭
+3. 오른쪽 상단 -&gt; 클릭
+4.referefcing Outlets + 드래그 
+5. 드래그 ~ viewController.swift 까지 끌음.
+6. 라인에 동그라미 채워짐 확인.
+</code></pre><p>  <strong>segue</strong>  :  화면이동 개념을 지칭 (세그웨이)</p>
+<ul>
+<li><strong>prepareForSegue</strong> : 화면 이동전 준비 작업 A-&gt;B 이동 한다고 할때 A에서 구현.<br>: 준비란?<br>  어느세그웨이가 실행 될지<br>  어느세그웨이가 실행되면 이동할화면<br>  화면 B의 어느 데이터를 어떻게 변경 할것 인가</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/05/16/hex-swift/ios-변수-옵셔널/" data-id="cjhezmwyu000fu5scb3rpvrik" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2018/05/17/hex-IOS/ios-start/" data-id="cjhezmwyq0006u5sc0famiatj" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IOS/">IOS</a></li></ul>
 
     </footer>
   </div>
@@ -120,19 +147,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/05/16/hex-swift/ios-closure-class-tuple/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/18/hex-kotlin/kt-CallBack/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          ios-클로져, 클래스,구조체,튜플
+          kotlin - 인터페이스없는 콜백
         
       </div>
     </a>
   
   
-    <a href="/2018/01/27/hex-etc/hexo/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/05/17/hex-kotlin/kt-link/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">hexo</div>
+      <div class="article-nav-title">kotlin- 잘 정리된 link 모음</div>
     </a>
   
 </nav>

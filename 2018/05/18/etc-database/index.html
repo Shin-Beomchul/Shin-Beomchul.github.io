@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>start IOS - 변수,옵셔널 | GOD-BEOM Blog</title>
+  <title>사내 세미나  - MySQL Tips | GOD-BEOM Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="목표 Swift의 변수 선언과 optional 의 개념 이해. Swift의 타입 안정성  엄격한 정적 타이핑 언어 (타입에 대한 엄격성) 옵셔널: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.  12var str:String = &quot;가나다&quot;  str =nil // ">
-<meta name="keywords" content="swift">
+  <meta name="description" content="쿼리 작성 유의사항 whregroup bdisorder 너무 많은 인덱스는 성능 , 용량 부족의 원인.5.7깆 ㄴ 오름차순 내림차순 정렬이 안됨. 묵시적형변환 디비같은 경우 묵시적 형변환이 이뤄짐.내부적으로 변환이 이뤄짐. 우선순위가 높은타입으로 형이 자동 변환.  자바 스크립트같은 정">
+<meta name="keywords" content="세미나 기록">
 <meta property="og:type" content="article">
-<meta property="og:title" content="start IOS - 변수,옵셔널">
-<meta property="og:url" content="https://shin-beomchul.github.io/2018/05/16/hex-swift/ios-변수-옵셔널/index.html">
+<meta property="og:title" content="사내 세미나  - MySQL Tips">
+<meta property="og:url" content="https://shin-beomchul.github.io/2018/05/18/etc-database/index.html">
 <meta property="og:site_name" content="GOD-BEOM Blog">
-<meta property="og:description" content="목표 Swift의 변수 선언과 optional 의 개념 이해. Swift의 타입 안정성  엄격한 정적 타이핑 언어 (타입에 대한 엄격성) 옵셔널: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.  12var str:String = &quot;가나다&quot;  str =nil // 컴퍼알 에러 ! 그럼 nil을 어떻게 넣느냐?: 옵셔널(?) 키워드를 변수를정의할때 붙힘.">
+<meta property="og:description" content="쿼리 작성 유의사항 whregroup bdisorder 너무 많은 인덱스는 성능 , 용량 부족의 원인.5.7깆 ㄴ 오름차순 내림차순 정렬이 안됨. 묵시적형변환 디비같은 경우 묵시적 형변환이 이뤄짐.내부적으로 변환이 이뤄짐. 우선순위가 높은타입으로 형이 자동 변환.  자바 스크립트같은 정적 타이핑 언어가 아닌 언어에서 호출할때 평변환을 명시적으로 해주는것이">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-05-16T08:33:41.558Z">
+<meta property="og:updated_time" content="2018-05-20T15:39:01.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="start IOS - 변수,옵셔널">
-<meta name="twitter:description" content="목표 Swift의 변수 선언과 optional 의 개념 이해. Swift의 타입 안정성  엄격한 정적 타이핑 언어 (타입에 대한 엄격성) 옵셔널: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.  12var str:String = &quot;가나다&quot;  str =nil // 컴퍼알 에러 ! 그럼 nil을 어떻게 넣느냐?: 옵셔널(?) 키워드를 변수를정의할때 붙힘.">
+<meta name="twitter:title" content="사내 세미나  - MySQL Tips">
+<meta name="twitter:description" content="쿼리 작성 유의사항 whregroup bdisorder 너무 많은 인덱스는 성능 , 용량 부족의 원인.5.7깆 ㄴ 오름차순 내림차순 정렬이 안됨. 묵시적형변환 디비같은 경우 묵시적 형변환이 이뤄짐.내부적으로 변환이 이뤄짐. 우선순위가 높은타입으로 형이 자동 변환.  자바 스크립트같은 정적 타이핑 언어가 아닌 언어에서 호출할때 평변환을 명시적으로 해주는것이">
   
     <link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
   
@@ -69,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hex-swift/ios-변수-옵셔널" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-etc-database" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/16/hex-swift/ios-변수-옵셔널/" class="article-date">
-  <time datetime="2018-05-16T05:44:40.000Z" itemprop="datePublished">2018-05-16</time>
+    <a href="/2018/05/18/etc-database/" class="article-date">
+  <time datetime="2018-05-18T08:02:22.000Z" itemprop="datePublished">2018-05-18</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      start IOS - 변수,옵셔널
+      사내 세미나  - MySQL Tips
     </h1>
   
 
@@ -91,28 +91,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>목표</strong><br> Swift의 변수 선언과 optional 의 개념 이해.</p>
-<p><strong>Swift의 타입 안정성</strong></p>
-<ul>
-<li>엄격한 정적 타이핑 언어 (타입에 대한 엄격성)</li>
-<li>옵셔널<br>: 값이 있을 수도 있고 없을 수도 있는 것을 나타냄.</li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str:<span class="type">String</span> = <span class="string">"가나다"</span> </span><br><span class="line"> str =<span class="literal">nil</span> <span class="comment">// 컴퍼알 에러 !</span></span><br></pre></td></tr></table></figure>
-<p>그럼 nil을 어떻게 넣느냐?<br>: 옵셔널(?) 키워드를 변수를정의할때 붙힘.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str:<span class="type">String</span>?</span><br><span class="line"></span><br><span class="line">str = <span class="string">"가나다"</span></span><br><span class="line"><span class="built_in">print</span>(str) <span class="comment">// 가나다 </span></span><br><span class="line"></span><br><span class="line">str = <span class="literal">nil</span>   </span><br><span class="line"><span class="built_in">print</span>(str) <span class="comment">// nil</span></span><br></pre></td></tr></table></figure>
-<p>옵셔널 변수는 일반 변수와 근본적으로 완전히 다름.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> optStr? =<span class="string">"옵셔널 스트링"</span></span><br><span class="line"><span class="keyword">let</span> ordnailStr = optStr <span class="comment">// 컴파일 에러</span></span><br></pre></td></tr></table></figure></p>
-<p>optStr은 실제 코드가 실행 되기 전까지 값이 있는지 알 수 없음.</p>
-<p>let : final<br>~~~swift</p>
-<p>var name = “Suyeol Jeon”<br>let birthyear = 1995</p>
-<p>birthyear = 1990 //error ! 컴파일 에러 </p>
+        <p><strong> 쿼리 작성 유의사항</strong></p>
+<p>whre<br>group b<br>dis<br>order</p>
+<p>너무 많은 인덱스는 성능 , 용량 부족의 원인.<br>5.7깆 ㄴ 오름차순 내림차순 정렬이 안됨.</p>
+<p><strong>묵시적형변환</strong><br> 디비같은 경우 묵시적 형변환이 이뤄짐.<br>내부적으로 변환이 이뤄짐. 우선순위가 높은타입으로 형이 자동 변환.</p>
+<p> 자바 스크립트같은 정적 타이핑 언어가 아닌 언어에서 호출할때 평변환을 명시적으로 해주는것이 좋음<br>잘못하면 인덱싱이 느려질 수 있음.</p>
+<p>연산자 앞에 %LIKE 를 붙히면 인덱싱이 불가능. -&gt; 풀 스캔을함.<br>: 해결 방법 뒤에 붙혀라.</p>
+<p> <strong>where 절에서인덱스 사용방법</strong><br> 1.범위 제한 조건</p>
+<ol>
+<li><p>체크 조건<br>ㅂ<br>동등조건을왼쪽으로 미루자.</p>
+<p><strong>Limit</strong><br>where과 함께사용시 where를 풀 스캔하고 잘라냄.</p>
+<p><strong>유니온</strong><br>중복제거가 중효하지않으면 유니온 올</p>
+<p><strong>서브쿼리</strong><br>from 절에 서브쿼리 자제할것. 필요 할때 말고는 쓰지말것.<br>해결 : 조인으로 대체 할 수 있으면 조인으로 대체 할것.</p>
+<p><strong>JOIN</strong><br>순서중요, 옵티마이젹가 어느정도 해줌</p>
+<p><strong>Float</strong></p>
+<p>저장 시 고정소수점을 곱했을 때는 어느정도 명확하지만,<br>고정 소수점이 아닌 경우 어떤 값과 곱했을 경우 값이 달라질 수 있음.</p>
+<p>값이 달라지는 이유 :<br>컴퓨터는 IEEE754 형태  이진형식으로 부호화 이때 이진수는 모든 10진수를 표현하지 못할 수도 있음. 이때 값이 변형 될 수 있음.</p>
+<p>예)  클라이언트와 서버와 이진처리방식이 달라 케릭터가 죽고  안죽고가 결정 될 수 있음.</p>
+<p>해결 : 고정소수점을 이용해서 소수점 2자리 까, 4자리까지 정책을 둬서 저장.</p>
+</li>
+</ol>
+<p><strong>인덱스관련 심플 마무리</strong><br> 올 인덱스맨 풀스캔을 한다.<br> 올 : 풀스캔<br> 인덱스 : 인덱스 풀스캔<br> : 인덱스 재구성, 쿼리 수정.</p>
+<p>: Oracle 과 MySql 쿼리의 비교<br>  안시표준을 따르는게 좋다<br>  서브쿼리에 alias가 붙혀야 신텍스 에러 안남.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/05/16/hex-swift/ios-변수-옵셔널/" data-id="cjhezmwyu000fu5scb3rpvrik" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2018/05/18/etc-database/" data-id="cjhezmwxv0000u5sc7sxn9w3j" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/세미나-기록/">세미나 기록</a></li></ul>
 
     </footer>
   </div>
@@ -120,19 +128,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/05/16/hex-swift/ios-closure-class-tuple/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          ios-클로져, 클래스,구조체,튜플
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/27/hex-etc/hexo/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/05/18/hex-kotlin/kt-CallBack/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">hexo</div>
+      <div class="article-nav-title">kotlin - 인터페이스없는 콜백</div>
     </a>
   
 </nav>

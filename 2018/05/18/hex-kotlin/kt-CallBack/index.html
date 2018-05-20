@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>kotlin - 인터페이스없는 콜백 | GOD-BEOM Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="한줄 요약 : 코틀린 사용 하는데 콜백 인터페이스 만들지 마세요. java에서 콜백을 지정 하려면 콜백 인터페이스를 지정하고 ,함수 선언 단계에서  반환 값으로을 지정하는 다음과 같은 2단계가 필요 했습니다  콜백 인터페이스 선언 함수에서 콜백 파라미터로 선언  1234567891011">
+<meta name="keywords" content="Kotlin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kotlin - 인터페이스없는 콜백">
+<meta property="og:url" content="https://shin-beomchul.github.io/2018/05/18/hex-kotlin/kt-CallBack/index.html">
+<meta property="og:site_name" content="GOD-BEOM Blog">
+<meta property="og:description" content="한줄 요약 : 코틀린 사용 하는데 콜백 인터페이스 만들지 마세요. java에서 콜백을 지정 하려면 콜백 인터페이스를 지정하고 ,함수 선언 단계에서  반환 값으로을 지정하는 다음과 같은 2단계가 필요 했습니다  콜백 인터페이스 선언 함수에서 콜백 파라미터로 선언  12345678910111213141516171819202122232425262728//콜백 인">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2018-05-20T15:38:28.972Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="kotlin - 인터페이스없는 콜백">
+<meta name="twitter:description" content="한줄 요약 : 코틀린 사용 하는데 콜백 인터페이스 만들지 마세요. java에서 콜백을 지정 하려면 콜백 인터페이스를 지정하고 ,함수 선언 단계에서  반환 값으로을 지정하는 다음과 같은 2단계가 필요 했습니다  콜백 인터페이스 선언 함수에서 콜백 파라미터로 선언  12345678910111213141516171819202122232425262728//콜백 인">
+  
+    <link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">GOD-BEOM Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">GOD BEOM ~</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://shin-beomchul.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hex-kotlin/kt-CallBack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/18/hex-kotlin/kt-CallBack/" class="article-date">
+  <time datetime="2018-05-18T00:26:22.000Z" itemprop="datePublished">2018-05-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      kotlin - 인터페이스없는 콜백
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>한줄 요약 : 코틀린 사용 하는데 콜백 인터페이스 만들지 마세요.</strong></p>
+<p><strong>java에서 콜백을 지정 하려면 콜백 인터페이스를 지정하고 ,<br>함수 선언 단계에서  반환 값으로을 지정하는 다음과 같은 2단계가 필요 했습니다</strong></p>
+<ol>
+<li>콜백 인터페이스 선언</li>
+<li>함수에서 콜백 파라미터로 선언</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//콜백 인터페이스 선언</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Callback</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(ResultType result)</span></span>;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">onError</span> <span class="params">(Exception exception)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">함수에서 콜백 파라미터로 선언</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getAccountAPI</span><span class="params">(Callback callback)</span> </span>&#123;</span><br><span class="line">   </span><br><span class="line">     <span class="comment">//API Call ...     </span></span><br><span class="line">     </span><br><span class="line">    callback.onSuccess(myResult);</span><br><span class="line">    callback.onError(e)</span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//사용</span></span><br><span class="line">Retrofit.getAccountAPI(<span class="keyword">new</span> Callback() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(ResultType result)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Exception e)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>코틀린 : 함수 선언과 동시에 함수형 인터페이스 선언</strong></p>
+<ol>
+<li>함수에서 콜백 파라미터로 선언 &amp;&amp; 콜백 선언 </li>
+</ol>
+<p>함수형 인터페이스를 함수 선언과 동시에 즉시 명시 가능.<br>이렇듯 코틀린의 콜백에서 선언되지 않았는데 전달되는 것을 람다 또는 익명 함수라고 부르며, 있어 보이게<br>“functional literal” 라고 부릅니다.</p>
+<p><strong>코틀린 콜백 - 선언</strong><br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">함수에서 콜백 파라미터로 선언 &amp;&amp; 콜백 선언 </span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">getAccountAPI</span><span class="params">(onSuccess: (<span class="type">result</span>)</span></span> -&gt; <span class="built_in">Unit</span>, onError: (Throwable) -&gt; <span class="built_in">Unit</span>)&#123;</span><br><span class="line"></span><br><span class="line"> <span class="comment">//call Async API </span></span><br><span class="line"> ...</span><br><span class="line"> onSuccess(myResult) </span><br><span class="line"> </span><br><span class="line"> ...</span><br><span class="line"> onError(e) </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>코틀린 콜백 - 사용</strong></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">retorift.getAccountAPI(result -&gt; &#123;</span><br><span class="line">   <span class="comment">//Success </span></span><br><span class="line"></span><br><span class="line">&#125;, error -&gt;&#123;</span><br><span class="line">   <span class="comment">//Error </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shin-beomchul.github.io/2018/05/18/hex-kotlin/kt-CallBack/" data-id="cjhezmwyr0009u5scyht9vr6x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kotlin/">Kotlin</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/18/etc-database/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          사내 세미나  - MySQL Tips
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/17/hex-IOS/ios-start/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ios시작</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/세미나-기록/">세미나 기록</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/작성중/">작성중</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IOS/" style="font-size: 10px;">IOS</a> <a href="/tags/Kotlin/" style="font-size: 20px;">Kotlin</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a> <a href="/tags/세미나-기록/" style="font-size: 10px;">세미나 기록</a> <a href="/tags/작성중/" style="font-size: 10px;">작성중</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">12월 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/18/etc-database/">사내 세미나  - MySQL Tips</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/18/hex-kotlin/kt-CallBack/">kotlin - 인터페이스없는 콜백</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/17/hex-IOS/ios-start/">ios시작</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/17/hex-kotlin/kt-link/">kotlin- 잘 정리된 link 모음</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/16/hex-swift/ios-closure-class-tuple/">ios-클로져, 클래스,구조체,튜플</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Beom Chul<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
