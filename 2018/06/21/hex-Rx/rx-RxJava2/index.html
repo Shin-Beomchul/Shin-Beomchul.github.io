@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>MarkDown 알아보기 | GOD-BEOM Blog</title>
+  <title>rx-RxJava2(작성중 1단계) | GOD-BEOM Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="글자 크기 #으로 결정 코드 블럭-java자바는 아래와 같이 표현됩니다.1for(int i =0 ;) 이미지">
+  <meta name="description" content="포스팅 순서. 1단계. 코딩 중 중요 키워드 막 적기.2단계. 정리 Observable은 스레드에서 각각 모두 독립적이다.합성 함수나 조작합수에서 스레드를 block/ Async 함. Observable은 각각의 스레드 지정이 가능함.zip(ob1, ob2) : ob1,ob2 의 동작 ">
+<meta name="keywords" content="RxJava2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MarkDown 알아보기">
-<meta property="og:url" content="https://shin-beomchul.github.io/2018/01/23/hex-작성중/markdown/index.html">
+<meta property="og:title" content="rx-RxJava2(작성중 1단계)">
+<meta property="og:url" content="https://shin-beomchul.github.io/2018/06/21/hex-Rx/rx-RxJava2/index.html">
 <meta property="og:site_name" content="GOD-BEOM Blog">
-<meta property="og:description" content="글자 크기 #으로 결정 코드 블럭-java자바는 아래와 같이 표현됩니다.1for(int i =0 ;) 이미지">
+<meta property="og:description" content="포스팅 순서. 1단계. 코딩 중 중요 키워드 막 적기.2단계. 정리 Observable은 스레드에서 각각 모두 독립적이다.합성 함수나 조작합수에서 스레드를 block/ Async 함. Observable은 각각의 스레드 지정이 가능함.zip(ob1, ob2) : ob1,ob2 의 동작 스레드를 서로 다르게 지정 가능함. 구독(subscribe)은 Consu">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-01-23T13:43:35.763Z">
+<meta property="og:updated_time" content="2018-07-02T11:48:56.917Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MarkDown 알아보기">
-<meta name="twitter:description" content="글자 크기 #으로 결정 코드 블럭-java자바는 아래와 같이 표현됩니다.1for(int i =0 ;) 이미지">
+<meta name="twitter:title" content="rx-RxJava2(작성중 1단계)">
+<meta name="twitter:description" content="포스팅 순서. 1단계. 코딩 중 중요 키워드 막 적기.2단계. 정리 Observable은 스레드에서 각각 모두 독립적이다.합성 함수나 조작합수에서 스레드를 block/ Async 함. Observable은 각각의 스레드 지정이 가능함.zip(ob1, ob2) : ob1,ob2 의 동작 스레드를 서로 다르게 지정 가능함. 구독(subscribe)은 Consu">
   
     <link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
   
@@ -68,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hex-작성중/markdown" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hex-Rx/rx-RxJava2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/01/23/hex-작성중/markdown/" class="article-date">
-  <time datetime="2018-01-23T13:27:13.000Z" itemprop="datePublished">2018-01-23</time>
+    <a href="/2018/06/21/hex-Rx/rx-RxJava2/" class="article-date">
+  <time datetime="2018-06-21T11:18:14.000Z" itemprop="datePublished">2018-06-21</time>
 </a>
     
   </div>
@@ -82,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      MarkDown 알아보기
+      rx-RxJava2(작성중 1단계)
     </h1>
   
 
@@ -90,34 +91,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="글자-크기"><a href="#글자-크기" class="headerlink" title="글자 크기"></a>글자 크기</h1><p> #으로 결정</p>
-<h1 id="코드-블럭"><a href="#코드-블럭" class="headerlink" title="코드 블럭"></a>코드 블럭</h1><h2 id="java"><a href="#java" class="headerlink" title="-java"></a>-java</h2><p>자바는 아래와 같이 표현됩니다.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span> ;)</span><br></pre></td></tr></table></figure></p>
-<h1 id="이미지"><a href="#이미지" class="headerlink" title="이미지"></a>이미지</h1>
+        <p>포스팅 순서.</p>
+<p>1단계. 코딩 중 중요 키워드 막 적기.<br>2단계. 정리</p>
+<p><strong>Observable은 스레드에서 각각 모두 독립적이다.</strong><br>합성 함수나 조작합수에서 스레드를 block/ Async 함.</p>
+<p>Observable은 각각의 스레드 지정이 가능함.<br>zip(ob1, ob2) : ob1,ob2 의 동작 스레드를 서로 다르게 지정 가능함.</p>
+<p><strong>구독(subscribe)은 Consumer,Observer가 할 수 있다.</strong><br> Consumer는 onNext(t)만 가짐.<br> Observer는 4개의 메소드를 가짐. 구독시작,아이템,에러,완료</p>
+<p><strong>Subject 한줄 요약</strong><br> AsyncSubJect : onComplete 호출 이전 발행 데이터를 구독자에게 마지막 데이터를 알림.<br>  즉. 구독자(옵서버,컨슈머)의 개입 시점이나 아이템 발생 시점이 아니라는 것이다.<br>      AsyncSubJect에서 구독자들에게 전달 되는 시점은 오직 onComplete가 호출 되기 전 마지막 발행한 아이템 인것이다.</p>
+<p>PublishSubject : 생방송, 아이템  발행 중 구독자가 조인 되는 순간 구독 시작<br> 적용 생각 : 센서 데이터를 발행(받아들이고)하고, 여러 구독자(센서 정보 컨버팅 모듈)<br>  ex) </p>
+<p>BehaviorSubject : 가장 최근 값 또는 기본값을 넘겨주는 클래스<br>ReplaySubject  : VOD </p>
+<p> <strong>매번 혼동스러운 핫 콜드 옵져버블</strong></p>
+<p> hot: 구독자을 여러개 등록 할 수 있음.<br> Cold:     </p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/01/23/hex-작성중/markdown/" data-id="cjkdb819i000qduscxhnx5qf6" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2018/06/21/hex-Rx/rx-RxJava2/" data-id="cjkdb81990008dusctufsidtu" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxJava2/">RxJava2</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/01/23/hex-kotlin/kt-01-Syntax/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/05/hex-android/android-china/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          코틀린 Week1-Syntax
+          Android 중국 출시 삽질 노트.
         
       </div>
     </a>
   
   
-    <a href="/2017/12/18/DI/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/05/24/hex-etc/etc-품질관리/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">의존성 주입 Di Dagger2</div>
+      <div class="article-nav-title">품질관리</div>
     </a>
   
 </nav>

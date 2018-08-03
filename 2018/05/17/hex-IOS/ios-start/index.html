@@ -5,18 +5,18 @@
   
   <title>ios시작 | GOD-BEOM Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="빌드  핸드폰 빌드 순서  빌드 시 인증서 확인 -&amp;gt; 인증서 프로비져닝 매칭 체크 -&amp;gt; 빌드   Success  인증서 프로젝트를 개발, 발드, 배포 할수 있는 인증서 인증서는 mac PC 에서 발급 할 수 있다. Case 1.  프로비져닝 :  기기에서 빌드 ">
+  <meta name="description" content="빌드  핸드폰 빌드 순서  빌드 시 인증서 확인 -&amp;gt; 인증서 프로비져닝 매칭 체크 -&amp;gt; 빌드   Success  App id 패키지명으로 생성.: 앱을 등록 인증서 프로젝트를 개발, 발드, 배포 할수 있는 인증서: dev, Dest : 푸시용 인증서 앱용 인증서">
 <meta name="keywords" content="IOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ios시작">
 <meta property="og:url" content="https://shin-beomchul.github.io/2018/05/17/hex-IOS/ios-start/index.html">
 <meta property="og:site_name" content="GOD-BEOM Blog">
-<meta property="og:description" content="빌드  핸드폰 빌드 순서  빌드 시 인증서 확인 -&amp;gt; 인증서 프로비져닝 매칭 체크 -&amp;gt; 빌드   Success  인증서 프로젝트를 개발, 발드, 배포 할수 있는 인증서 인증서는 mac PC 에서 발급 할 수 있다. Case 1.  프로비져닝 :  기기에서 빌드 할 수 있는 권한을 가진 인증서. 위 인증서로 발급된 인증서와 쌍을 이룬다. Story">
+<meta property="og:description" content="빌드  핸드폰 빌드 순서  빌드 시 인증서 확인 -&amp;gt; 인증서 프로비져닝 매칭 체크 -&amp;gt; 빌드   Success  App id 패키지명으로 생성.: 앱을 등록 인증서 프로젝트를 개발, 발드, 배포 할수 있는 인증서: dev, Dest : 푸시용 인증서 앱용 인증서 라고 부름  (개발자등록되어 있나 안되어있나 확인하기 위한 용도) : (개발인증서 발">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-05-18T07:11:09.970Z">
+<meta property="og:updated_time" content="2018-07-04T06:37:20.036Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ios시작">
-<meta name="twitter:description" content="빌드  핸드폰 빌드 순서  빌드 시 인증서 확인 -&amp;gt; 인증서 프로비져닝 매칭 체크 -&amp;gt; 빌드   Success  인증서 프로젝트를 개발, 발드, 배포 할수 있는 인증서 인증서는 mac PC 에서 발급 할 수 있다. Case 1.  프로비져닝 :  기기에서 빌드 할 수 있는 권한을 가진 인증서. 위 인증서로 발급된 인증서와 쌍을 이룬다. Story">
+<meta name="twitter:description" content="빌드  핸드폰 빌드 순서  빌드 시 인증서 확인 -&amp;gt; 인증서 프로비져닝 매칭 체크 -&amp;gt; 빌드   Success  App id 패키지명으로 생성.: 앱을 등록 인증서 프로젝트를 개발, 발드, 배포 할수 있는 인증서: dev, Dest : 푸시용 인증서 앱용 인증서 라고 부름  (개발자등록되어 있나 안되어있나 확인하기 위한 용도) : (개발인증서 발">
   
     <link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
   
@@ -96,9 +96,9 @@
 <ol>
 <li>빌드 시 인증서 확인 -&gt; 인증서 프로비져닝 매칭 체크 -&gt; 빌드   Success</li>
 </ol>
-<p><strong>인증서</strong> 프로젝트를 개발, 발드, 배포 할수 있는 인증서</p>
-<p>인증서는 mac PC 에서 발급 할 수 있다.</p>
-<p>Case 1. </p>
+<p><strong>App id</strong> 패키지명으로 생성.<br>: 앱을 등록</p>
+<p><strong>인증서</strong> 프로젝트를 개발, 발드, 배포 할수 있는 인증서<br>: dev, Dest : 푸시용 인증서 앱용 인증서 라고 부름<br>  (개발자등록되어 있나 안되어있나 확인하기 위한 용도)</p>
+<p>: (개발인증서 발급으로 만듬)<br>주의사항 : 인증서를 웹에서 말소시켜 버리면 개발자는 다 못씀.<br>일반적으로 여려명의 개발자 일경우 1명이 관리함.</p>
 <p><strong>프로비져닝</strong> :  기기에서 빌드 할 수 있는 권한을 가진 인증서.<br> 위 인증서로 발급된 인증서와 쌍을 이룬다.</p>
 <p><strong>Story Board</strong></p>
 <ul>
@@ -132,11 +132,15 @@
 </ul>
 </li>
 </ul>
+<pre><code>Color 
+</code></pre><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">UIColorFromHex</span><span class="params">(rgbValue:UInt32, alpha:Double=<span class="number">1.0</span>)</span></span>-&gt;<span class="type">UIColor</span> &#123;</span><br><span class="line">   <span class="keyword">let</span> red = <span class="type">CGFloat</span>((rgbValue &amp; <span class="number">0xFF0000</span>) &gt;&gt; <span class="number">16</span>)/<span class="number">256.0</span></span><br><span class="line">   <span class="keyword">let</span> green = <span class="type">CGFloat</span>((rgbValue &amp; <span class="number">0xFF00</span>) &gt;&gt; <span class="number">8</span>)/<span class="number">256.0</span></span><br><span class="line">   <span class="keyword">let</span> blue = <span class="type">CGFloat</span>(rgbValue &amp; <span class="number">0xFF</span>)/<span class="number">256.0</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> <span class="type">UIColor</span>(red:red, green:green, blue:blue, alpha:<span class="type">CGFloat</span>(alpha))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>사용</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.view.backgroundColor = <span class="type">UIColorFromHex</span>(<span class="number">0x323232</span>,alpha: <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/05/17/hex-IOS/ios-start/" data-id="cjhezmwyq0006u5sc0famiatj" class="article-share-link">Share</a>
+      <a data-url="https://shin-beomchul.github.io/2018/05/17/hex-IOS/ios-start/" data-id="cjkdb81970005dusc61q3lvub" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IOS/">IOS</a></li></ul>
@@ -178,7 +182,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/세미나-기록/">세미나 기록</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/작성중/">작성중</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android중국/">Android중국</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava2/">RxJava2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/etc/">etc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/세미나-기록/">세미나 기록</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/작성중/">작성중</a></li></ul>
     </div>
   </div>
 
@@ -188,7 +192,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/IOS/" style="font-size: 10px;">IOS</a> <a href="/tags/Kotlin/" style="font-size: 20px;">Kotlin</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a> <a href="/tags/세미나-기록/" style="font-size: 10px;">세미나 기록</a> <a href="/tags/작성중/" style="font-size: 10px;">작성중</a>
+      <a href="/tags/AWS/" style="font-size: 10px;">AWS</a> <a href="/tags/Android중국/" style="font-size: 10px;">Android중국</a> <a href="/tags/IOS/" style="font-size: 15px;">IOS</a> <a href="/tags/Kotlin/" style="font-size: 20px;">Kotlin</a> <a href="/tags/RxJava2/" style="font-size: 10px;">RxJava2</a> <a href="/tags/etc/" style="font-size: 10px;">etc</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a> <a href="/tags/세미나-기록/" style="font-size: 10px;">세미나 기록</a> <a href="/tags/작성중/" style="font-size: 10px;">작성중</a>
     </div>
   </div>
 
@@ -197,7 +201,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">12월 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">6월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">12월 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a></li></ul>
     </div>
   </div>
 
@@ -210,23 +214,23 @@
       <ul>
         
           <li>
-            <a href="/2018/05/18/etc-database/">사내 세미나  - MySQL Tips</a>
+            <a href="/2018/07/12/hex-etc/etc-aws-구축세션1/">aws-구축세션1</a>
           </li>
         
           <li>
-            <a href="/2018/05/18/hex-kotlin/kt-CallBack/">kotlin - 인터페이스없는 콜백</a>
+            <a href="/2018/07/05/hex-android/android-china/">Android 중국 출시 삽질 노트.</a>
           </li>
         
           <li>
-            <a href="/2018/05/17/hex-IOS/ios-start/">ios시작</a>
+            <a href="/2018/06/21/hex-Rx/rx-RxJava2/">rx-RxJava2(작성중 1단계)</a>
           </li>
         
           <li>
-            <a href="/2018/05/17/hex-kotlin/kt-link/">kotlin- 잘 정리된 link 모음</a>
+            <a href="/2018/05/24/hex-etc/etc-품질관리/">품질관리</a>
           </li>
         
           <li>
-            <a href="/2018/05/16/hex-swift/ios-closure-class-tuple/">ios-클로져, 클래스,구조체,튜플</a>
+            <a href="/2018/05/18/hex-etc/etc-database/">사내 세미나  - MySQL Tips</a>
           </li>
         
       </ul>

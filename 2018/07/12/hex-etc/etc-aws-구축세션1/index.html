@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>aws-구축세션1 | GOD-BEOM Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="AWS 시작 - PM 2:00엘라스틱 로드밸런싱 : 스케일 확장 담당.레디스 : 캐싱S3 : 스태틱 컨텐츠 엑세스NoSQL : 관리 포인트가 사라지는 어플리케이션에서 관리가 될 수있음.백업 : 신경쓸 필요가 없어짐. RDB 일경우 이중화에 신경 써야함.       Wraning!! EC">
+<meta name="keywords" content="AWS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="aws-구축세션1">
+<meta property="og:url" content="https://shin-beomchul.github.io/2018/07/12/hex-etc/etc-aws-구축세션1/index.html">
+<meta property="og:site_name" content="GOD-BEOM Blog">
+<meta property="og:description" content="AWS 시작 - PM 2:00엘라스틱 로드밸런싱 : 스케일 확장 담당.레디스 : 캐싱S3 : 스태틱 컨텐츠 엑세스NoSQL : 관리 포인트가 사라지는 어플리케이션에서 관리가 될 수있음.백업 : 신경쓸 필요가 없어짐. RDB 일경우 이중화에 신경 써야함.       Wraning!! EC2 + RDBMS : 관리포인트가 늘어남. AWS 서비스젠킨스 : 관리포">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2018-07-12T07:13:45.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="aws-구축세션1">
+<meta name="twitter:description" content="AWS 시작 - PM 2:00엘라스틱 로드밸런싱 : 스케일 확장 담당.레디스 : 캐싱S3 : 스태틱 컨텐츠 엑세스NoSQL : 관리 포인트가 사라지는 어플리케이션에서 관리가 될 수있음.백업 : 신경쓸 필요가 없어짐. RDB 일경우 이중화에 신경 써야함.       Wraning!! EC2 + RDBMS : 관리포인트가 늘어남. AWS 서비스젠킨스 : 관리포">
+  
+    <link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">GOD-BEOM Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">GOD BEOM ~</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://shin-beomchul.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hex-etc/etc-aws-구축세션1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/12/hex-etc/etc-aws-구축세션1/" class="article-date">
+  <time datetime="2018-07-12T04:30:10.000Z" itemprop="datePublished">2018-07-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      aws-구축세션1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="AWS-시작-PM-2-00"><a href="#AWS-시작-PM-2-00" class="headerlink" title="AWS 시작 - PM 2:00"></a>AWS 시작 - PM 2:00</h1><p><strong>엘라스틱 로드밸런싱</strong> : 스케일 확장 담당.<br><strong>레디스</strong> : 캐싱<br><strong>S3</strong> : 스태틱 컨텐츠 엑세스<br><strong>NoSQL</strong> : 관리 포인트가 사라지는 어플리케이션에서 관리가 될 수있음.<br><strong>백업</strong> : 신경쓸 필요가 없어짐. RDB 일경우 이중화에 신경 써야함.<br>       Wraning!! EC2 + RDBMS : 관리포인트가 늘어남.</p>
+<p><strong>AWS 서비스</strong><br>젠킨스 : 관리포인트 늘어남.</p>
+<p><strong>대안</strong><br>aws젠킨스<br>코드파이프라인<br>코드 디플로이<br>코드 빌드</p>
+<h2 id="요금제"><a href="#요금제" class="headerlink" title="요금제"></a>요금제</h2><h4 id="온디멘트"><a href="#온디멘트" class="headerlink" title="온디멘트"></a>온디멘트</h4><p>사용한 단위만큼 비용을 냄. 끄면 과금 안됨. 인스턴스가 확장되면 더 내고</p>
+<h4 id="스팟-인스턴스"><a href="#스팟-인스턴스" class="headerlink" title="스팟 인스턴스"></a>스팟 인스턴스</h4><p> 오토 스케일링을 지원하기 위해 클라우스 서비스를 제공함. 사용하지 않으면 경매 방식으로 제공함. 원래 만원인데 얼마에 쓰겠다. 경매를 함. 빅데이터 사용하는데 좀 더 빨리 계산해 내고 싶다. 이럴때사용함 보통 상태 저장이 필요 없는 서비스에 사용됨.</p>
+<h4 id="리저브드-인스턴스-RI"><a href="#리저브드-인스턴스-RI" class="headerlink" title="리저브드 인스턴스(RI)"></a>리저브드 인스턴스(RI)</h4><p>1~ 3년 동안 계약하면 30~ 70% 까지 할인 해서 받을 수 있음.<br>약정, 계약과 자유도에 따라 (작은 -&gt;큰 스케일로 변경과 같은) 가격이 달라짐.<br>선택지: 서비스를 사용해보고 어느정도 유추가 돠면 적정사이즈 RI선택과 + 온디멘드를 병행함.<br>      온디멘드 사용하다가 RI요금제로 바꾸는 개념.</p>
+<p><strong>m4</strong> : 가장 일반적인 타입.<br><strong>클래식,CLB,ELB</strong> : 3가지가 존재</p>
+<p> ALB: 어플리케이션 로드밸런서 :웹서비스 시 권유 이유는 기능이 많이 추가 될 예정<br>   사용 월간비용, EC2 : 네트워크 비용 발생. </p>
+<p>젠킨스 가격적인 비용이 유용? : 빌드가 잦지 않다면 젠킨스만으로 구성해도 좋음. 스케일 확장을 위해서는 코드 시리즈를 권장.</p>
+<p><strong>Amazon Auroa</strong> : 마이그레이션을 위해 사용.<br>오라클 -&gt;마이에스큐엘로 많이 넘어오고 일반적인 케이스 라이센스 비용적 측면</p>
+<p>aws비용 계산기로 대략적인 금액을 유추 할 수 있음.</p>
+<h1 id="CI-CD-PM-2-50"><a href="#CI-CD-PM-2-50" class="headerlink" title="CI,CD  PM 2:50"></a>CI,CD  PM 2:50</h1><p>AWS 코드 시리즈 + 젠킨스</p>
+<p>####코드 시리즈(코드 파이프라인)<br>코드 커밋 -&gt; 빌드 -&gt; 테스트 -&gt; 프로덕션(ECS,S3 각각에 맞는 서버에 배포)<br>: 코드스타가 새로 생김 원클릭 시스템</p>
+<p>위 4가지 과정중에 나의 서비스로 교체 가능<br>람다: 서버리스 어플리케이션  </p>
+<p>젠킨스온EC2</p>
+<p>EC2 : 디비 서버로 사용함.<br>RDS : 관리는 aws가 전부 다 해줌.<br> 각각에 서비스에 맞게 디비를 사용해라. RDS는 관계형이라 편하다 때문ㅇ 선택을 많이함.<br> NOSQL 사용해보라. 왜냐면 데이터 로드들이 커지만 RDS확장이 힘들 수 있음.<br> NOSQL은 아무리 많아져도 가능하고 인스턴스 관리 필요 없고 물리적인 인스턴스 노출이 필요 없음.<br>마이크로서비스를 지향 할때는 NO SQL을 권장함.</p>
+<h3 id="RDS"><a href="#RDS" class="headerlink" title="RDS?"></a>RDS?</h3><p> 관리가 편한이유 : 기본적으로 백업을 제공함. 1주일에서 기게는 35일 백업. 수동 스냅샷도 가능.<br> 리전 내지원 여부<br> 다른 리젠 읽기 복제 구성가능 :  리전간 복제가 가능함?  </p>
+<ul>
+<li>읽기복제 가능. 멀티 마스터 공개 예정 멀티 마스터?</li>
+<li>그럼 중국인 가능하냐?<pre><code>- 일원화가 가능해야함. 중국과, 중국리전 만큼은 독립되어 있음. 모든 싱크 과정은 비공식 방화벽으로 함.
+- 중국을 제외 거의 다되지만 중국은 메뉴얼릭하게 구성되어야함. 중국깽깽이들..
+</code></pre></li>
+</ul>
+<p> 고가용성을 위한 멀티 a-z지원<br> 성능 옵션 지원<br> SSD(제네럴 퍼포스)<br> IOPS 고성능 스토리지.</p>
+<h3 id="오로라"><a href="#오로라" class="headerlink" title="오로라?"></a>오로라?</h3><p> 2가지 오로라 마이에스큐엘 ,오라라 포스티  </p>
+<p>S3 : 저장소 </p>
+<h1 id="AWS-AI"><a href="#AWS-AI" class="headerlink" title="AWS AI"></a>AWS AI</h1><p>머신러닝 스택 이외의 기능을 제공 하려면 직접 구현해야함.<br>빅데이터는 데이터를 가지고, 문제 해결 하는 과정뿐만 아니라, <strong>SageMaker</strong>가 다 해결해줌.<br>높은성능의 GPU를 제공함을 주장.</p>
+<p>질문  :다른리전간 동일 데이터를 가지고 가야함. 이유는 이원화를 막아야함.</p>
+<p>DNS 서비스 라우터 53<br>US 리전<br>서울 리전 : 인프라 구성 (EC2,웹서버)</p>
+<p>CF라는 씨디엔 제공 S3앞단으로 연결됨. 스테틱 UI 는 US에서 캐싱이 됨. 빠름<br>그러나 데이터가 필요한동적인 데이터는 느림 -&gt; 인프라 구축함<br>DNS를 한번 타고 치나 레이턴시 기준으로 유에스로 돌림.</p>
+<p>데이터 복제가 어려움, 중국은 더더욱 어려움, US는 리드 레플리카가는 가능함. 데이터를 따로 갈수 있는것이 베스트<br>마스터 마스터 양측 다 쓰기가 일어나려면 신경을 많이써야함.해결: 멀티마스터 신경 써야함 레이턴시가 떨어질 수 밖에 없음 동기화 문제 때문에 어쩔 수 없음. 일반적으로 마스터 슬레이브 관계로 사용해야 할것이다.</p>
+<p>클라우드 포메이션 : 문서화가 아니라 제이슨 형태로 정의가 가능함. 운영이나 어디든 똑같이 찍어낼 수 있음.</p>
+<p>데이터베이스를 오로라로 넘기는 것에 대한 조언<br> 기본적인 서비스는 아니면 파트너 나 프로서 컨설팅 영역에 가까움 파트너에게 지원을 받아야함.<br> 메가존에서 지원 받을 것임.</p>
+<p> 스키마 컨버젼 툴? 이기종간 마이그레이션이 안되는것을 지원.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://shin-beomchul.github.io/2018/07/12/hex-etc/etc-aws-구축세션1/" data-id="cjkdb819a000adusc3u9v0x59" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AWS/">AWS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/05/hex-android/android-china/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Android 중국 출시 삽질 노트.</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android중국/">Android중국</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava2/">RxJava2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/etc/">etc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/세미나-기록/">세미나 기록</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/작성중/">작성중</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AWS/" style="font-size: 10px;">AWS</a> <a href="/tags/Android중국/" style="font-size: 10px;">Android중국</a> <a href="/tags/IOS/" style="font-size: 15px;">IOS</a> <a href="/tags/Kotlin/" style="font-size: 20px;">Kotlin</a> <a href="/tags/RxJava2/" style="font-size: 10px;">RxJava2</a> <a href="/tags/etc/" style="font-size: 10px;">etc</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a> <a href="/tags/세미나-기록/" style="font-size: 10px;">세미나 기록</a> <a href="/tags/작성중/" style="font-size: 10px;">작성중</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">6월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">12월 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/12/hex-etc/etc-aws-구축세션1/">aws-구축세션1</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/05/hex-android/android-china/">Android 중국 출시 삽질 노트.</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/21/hex-Rx/rx-RxJava2/">rx-RxJava2(작성중 1단계)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/24/hex-etc/etc-품질관리/">품질관리</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/18/hex-etc/etc-database/">사내 세미나  - MySQL Tips</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Beom Chul<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
