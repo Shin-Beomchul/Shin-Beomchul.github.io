@@ -1,0 +1,411 @@
+<!doctype html>
+<html>
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    
+    
+    <!--Simple SEO-->
+
+
+<meta name="robots" content=all />
+<meta name="google" content=all />
+<meta name="googlebot" content=all />
+<meta name="verify" content=all />
+    <!--Title-->
+
+<title>SW개발 패러다임의 전환, 그리고 성공적인 개발조직 운영 방향 | GOD-BEOM Blog</title>
+
+<link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages/post.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+<link rel="stylesheet" href="/css/pages/comments.css">
+
+    <!--script-->
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>-->
+
+
+<script src="/js/thirdParty/gitment.browser.min.js"></script>
+<script>
+  var labels = "blog,gitment";
+  labels = labels.split(",");
+  var gitment = new Gitment({
+    id: window.location.pathname,
+    owner: "GeekaholicLin",
+    repo: "geekaholiclin.github.io",
+    oauth: {
+      client_id: "aa2215dfc8ee944d1205",
+      client_secret: "77cd2afa5d161bc0ab04639ed81300d808c6e22b"
+    },
+    perPage: "20",
+    labels: labels
+  });
+</script>
+
+    
+    
+</head>
+
+<body id="normal">
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<style>
+    header{ top: 71px; position: absolute!important;}
+    #container{padding-top: 151px!important;}
+</style>
+<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<div id="wrap">
+    <header  style="position: absolute;" >
+    <div id="site-meta">
+        <a href="/" id="logo">
+            <h1 class="title">GOD-BEOM Blog</h1>
+        </a>
+        
+        <h2 class="subtitle">GOD BEOM ~</h2>
+        
+    </div>
+    <ul id="nav">
+        
+            <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
+        
+        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>검색</a></li>
+    </ul>
+</header>
+
+    <div id="container">
+        
+<ul id="sidebar">
+    
+    
+<li class="widget notification">
+    <i class="fa fa-bell-o"></i>
+    <div>
+        
+<p>안녕하세요 신범철 입니다.
+정보 <a href="https://github.com/Shin-beomChul"title="fork me" target="_blank"
+>Repo</a>
+</p>
+    </div>
+</li>
+
+    
+    
+
+    
+    
+<li class="widget widget-normal archive">
+  <h3 class="fa fa-archive widget-title">Archives</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/"><i class="fa" aria-hidden="true">11월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/"><i class="fa" aria-hidden="true">10월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/"><i class="fa" aria-hidden="true">9월 2018</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/"><i class="fa" aria-hidden="true">8월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">7월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/"><i class="fa" aria-hidden="true">6월 2018</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/"><i class="fa" aria-hidden="true">5월 2018</i></a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/"><i class="fa" aria-hidden="true">1월 2018</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/"><i class="fa" aria-hidden="true">12월 2017</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/"><i class="fa" aria-hidden="true">11월 2017</i></a><span class="archive-list-count">2</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal popular-posts" id="popular-posts">
+    <h3 class="fa fa-thermometer-3 widget-title">인기있는 블로그 글</h3>
+    <ul id="popular-content">
+        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+    </ul>
+</li>
+
+    
+    
+<li class="widget widget-normal tags">
+  <h3 class="fa fa-tags widget-title">태그</h3>
+  <div class="tagcloud-content">
+    
+      <a href="/tags/IOS/" style="font-size: 0.16rem; color: #477bb1">IOS</a> <a href="/tags/Android중국/" style="font-size: 0.14rem; color: #69c">Android중국</a> <a href="/tags/android/" style="font-size: 0.16rem; color: #477bb1">android</a> <a href="/tags/React-Native/" style="font-size: 0.14rem; color: #69c">React-Native</a> <a href="/tags/hybridFramework/" style="font-size: 0.16rem; color: #477bb1">hybridFramework</a> <a href="/tags/AWS/" style="font-size: 0.14rem; color: #69c">AWS</a> <a href="/tags/세미나-기록/" style="font-size: 0.14rem; color: #69c">세미나 기록</a> <a href="/tags/etc/" style="font-size: 0.2rem; color: #0a407c">etc</a> <a href="/tags/Kotlin/" style="font-size: 0.18rem; color: #295e97">Kotlin</a> <a href="/tags/Cordova/" style="font-size: 0.14rem; color: #69c">Cordova</a> <a href="/tags/swift/" style="font-size: 0.16rem; color: #477bb1">swift</a> <a href="/tags/RxJava2/" style="font-size: 0.14rem; color: #69c">RxJava2</a> <a href="/tags/작성중/" style="font-size: 0.14rem; color: #69c">작성중</a>
+  </div>
+</li>
+
+
+    
+    
+<li class="widget widget-normal friends-link">
+    <h3 class="fa fa-globe widget-title">링크</h3><br/>
+
+    
+        <a href="https://github.com/Shin-beomChul" class="fa" target="_blank">github</a>
+
+    
+
+</li>
+
+    
+</ul>
+
+
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="SW개발 패러다임의 전환, 그리고 성공적인 개발조직 운영 방향">
+                
+                SW개발 패러다임의 전환, 그리고 성공적인 개발조직 운영 방향
+                
+            </h1>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>null</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            etc
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2018/08/14</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="SW개발 패러다임의 전환, 그리고 성공적인 개발조직 운영 방향"
+              data-leadcloud-url="/2018/08/14/hex-etc/etc-sw패러다임-개발조직운영/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+</div>
+
+            
+            
+        </div>
+        
+        <div id="post-body">
+            <p>주제 : SW개발 패러다임의 전환, 그리고 성공적인 개발조직 운영 방향<br>연자 : 아주대학교 소프트웨어학과 윤대균 교수 (daekyuny.symflow.com)</p>
+<p>Session 1 : 에자일, 마이크로서비스</p>
+<ul>
+<li>엣지컴퓨팅</li>
+<li><p>에자일 왜 그토록 애자일?<br>   에자일은 하나의 백로그가 하루 정도에 끝나야 한다. 50% 개발 완료? 이런것만큼 모호한 말은 없음.  했다. 안했다.<br>   폭포수 : Plan driven : 계획하에 진행. (SI에서 주로 진행. 계약관계에 정해진 일정에 의한 )<br>   폭포수에서는 가시성이 떨어짐 (언제, 얼만큼 개발 되는지 알 기 힘듦)</p>
+<p>   3명의 구성원.</p>
+<ul>
+<li>프로덕트 오너</li>
+<li>스크럼 마스터 </li>
+<li>팀 멤버</li>
+</ul>
+</li>
+<li><p>개발자 테스터 디자이너가 한곳에 있어야 효율적.</p>
+</li>
+<li>데일리 스크럼      </li>
+<li>자동화가 어느정도 개발 되 있어야함.</li>
+<li>Scaling Instagram </li>
+<li><p>DevOps : 개발과 운영의 합성어<br> 오해 하지말것 : 개발자가 운영일을 하라는 뜻이 아님. 운영은 일반적으로 음지에서 -&gt; 운영의 가시화</p>
+<p> 물리-&gt;가상화-&gt;공개 클라우드-&gt;프라이밋 클라우드-&gt;컨테이너 </p>
+<p> 컨테이너 : 실행에 필요한 패키지들을 모두 하나의 컨테이너에 담아 배포 </p>
+<pre><code>기존 시스템 환경의 영향을 받지 않는 손쉬운 배포/전개
+장점 : 서비스 생성 및 실행이 실시간으로 즉시 이루어질 수 있음.
+</code></pre></li>
+</ul>
+<pre><code>마이크로 서비스의 장점 
+ 뉴테크 적용 쉬움.
+ 테스트가 쉬움.
+
+ 단점 : 
+ 배포가 힘들 수 있음.
+  따라서 컨테이너 오케스트레이션이 필요함.
+ 잘 아는 총책임 아키테쳐가 있어야함.
+
+  kubelet(쿠버네티스) 구글 : Ex) 서버 2000대 를 하나의 컨테이너로 소켓 꼽듯이 추가 함.
+  pod : 실제 배포 단위
+</code></pre><p>Session 2 : 내 업무 도메인에 적합한가? 우리 조직이 받아 들일 준비가 되있는가?<br>좋은조직? : 경험이 풍부한 조직 , 어떤 경험? 성공의 경험<br>한 프로젝트 주기는 보통 얼마나 되는가?<br>한팀 규모는 어느정도 ?<br>프로젝트의 목표를 팀내 모든 구성원들이 정확히 공유하고 있는가?<br>본인의 역할과 목표를 정확히 설명 할수 있는가?<br>팀 내 구성원 각각이 어떤 일을 하는지 서로 잘 아는가?<br>코드리뷰 하는가?<br>TDD적용 되어 있는가?<br>진행과정을 결과물로 보여줄 수 있는가?</p>
+<p>오픈소스 -&gt; 커스터마이징-&gt; dogfooding(불편하더라도 써보기.) </p>
+<p>실행<br> 기술 로드맵 테크니컬 asset<br> 인적관리 휴먼 asset<br> 목표를 정하고,  옵셔널 Excellency </p>
+<p>성공의 경험 -&gt;동기부여  -&gt; 롤모델</p>
+<p><strong>Best : 성공적인 프로젝트 경험을 가지고 있고, 각 구성원이 성공한 프로젝트에서의 뚜렷한 역할이 있으며, 다양한 성공의 겅험을 축적한 롤모델이 함께 하는 조직.</strong></p>
+<p>Q &amp; A<br>우리 개발기간이 2~3년 처럼 길다 어떻게 해야하나?<br>  작은 서비스 단위로 쪼개서 성과를 낼 수 있게 해야함.</p>
+
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="/" alt="avatar"/>
+                
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>
+                  
+                  글쓴이:
+                  
+                    
+                    <a href="/">Beom Chul</a>
+                </li>
+                
+                <li>발행 일자: <span>2018-08-14  16:21:33</span></li>
+                
+                <li>업데이트 일자: <span>2018-08-16  10:45:02</span></li>
+                
+                <li class="post-category">
+                    카테고리:
+                    
+                </li>
+                <li class="post-tags">
+                    태그:
+                    
+                    <a href="/tags/etc/">etc</a>
+                    
+                </li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="http://example.com/alipay.jpg" alt="支付宝付款" class="donate-img">
+                
+                <img src="http://example.com/wechat.png" alt="微信付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        <a href="/2018/09/28/hex-android/codeGen/" class="pre-post fa fa-caret-left">codeGen</a>
+        
+        
+        <a href="/2018/08/10/hex-android/android-error-post/" class="next-post fa">Android 에러 정리</a>
+        
+    </div>
+    
+    <div id="comments">
+        
+
+<script>
+  gitment.render(document.getElementById("comments"));
+</script>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+    <footer id="footer">
+    
+    <div class="social">
+        
+        <a href="https://www.example1.com" class="fa fa-free-code-camp" target="_blank" title="freecodecamp"></a>
+        
+        <a href="https://www.example2.com" class="fa fa-github" target="_blank" title="Follow me~"></a>
+        
+    </div>
+    
+    <div>
+        
+        <a href="/" class="copyright-links">Beom Chul</a>&copy;2015 - 2018.All Rights
+        Reserved.
+    </div>
+    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> | Theme by <a
+                href="https://github.com/GeekaholicLin" class="copyright-links" target="_blank">GeekaholicLin</a>
+    </p>
+    
+    
+    <p>
+        <span id="busuanzi_container_site_uv" class="fa fa-bar-chart">
+         <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 
+        </span>
+    </p>
+    
+</footer>
+
+</div>
+    <ul id="tools">
+    <li class="totop-btn fa fa-angle-up"></li>
+    <li class="exchange-btn fa fa-exchange"></li>
+  
+    <li class="toc-btn fa fa-list-ul"></li>
+    
+    
+
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
+    
+</ul>
+<p id="process"></p>
+<div id="search-overlay">
+    <div class="search-area-wrap">
+        <div id="search-area">
+            <div class="input-wrap focus">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="search-input" autofocus autocomplete="off" type="text"
+                       placeholder="search this website..."/>
+            </div>
+            <ul id="search-result">
+                <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    //theme config datas
+    var copyrightObj = {};
+    copyrightObj.enable = 'true';
+    copyrightObj.triggerCopyLength = '200';
+    copyrightObj.appendText = '商业转载请联系作者获得授权,非商业转载请注明出处 © example';
+    var leancloudObj = {};
+    leancloudObj.enable = 'true';
+    leancloudObj.className = 'BlogCounter';
+    leancloudObj.limits = '10';
+</script>
+<script type="text/javascript">
+    var search = {};
+    var search_path = "search.xml";
+    if (!search_path) {
+        search_path = "search.xml";
+    }
+    search.path = "/" + search_path;
+    search.func =  _ajax.init();
+</script>
+<script src="/js/app.js"></script>
+
+
+</body>
+</html>

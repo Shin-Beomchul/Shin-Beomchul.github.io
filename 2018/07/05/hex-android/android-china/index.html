@@ -1,100 +1,258 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  <title>Android 중국 출시 삽질 노트. | GOD-BEOM Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="푸시android.  :  BaiduIOS         :  APNS  1.baidu 한국에서 푸시  발송 후 5분 ~ 30분 정도의 늦게 도착하는 경우가 있음 (빈도 10/8)   중국에서는 지연없이 단말기에 도달 할까?   중국 출장 후 테스트 예정@결과 :        바이두 푸">
-<meta name="keywords" content="Android중국">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Android 중국 출시 삽질 노트.">
-<meta property="og:url" content="https://shin-beomchul.github.io/2018/07/05/hex-android/android-china/index.html">
-<meta property="og:site_name" content="GOD-BEOM Blog">
-<meta property="og:description" content="푸시android.  :  BaiduIOS         :  APNS  1.baidu 한국에서 푸시  발송 후 5분 ~ 30분 정도의 늦게 도착하는 경우가 있음 (빈도 10/8)   중국에서는 지연없이 단말기에 도달 할까?   중국 출장 후 테스트 예정@결과 :        바이두 푸시 서버 개발 팁 - deviceType 3 : Android  - de">
-<meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-07-05T05:43:56.116Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 중국 출시 삽질 노트.">
-<meta name="twitter:description" content="푸시android.  :  BaiduIOS         :  APNS  1.baidu 한국에서 푸시  발송 후 5분 ~ 30분 정도의 늦게 도착하는 경우가 있음 (빈도 10/8)   중국에서는 지연없이 단말기에 도달 할까?   중국 출장 후 테스트 예정@결과 :        바이두 푸시 서버 개발 팁 - deviceType 3 : Android  - de">
-  
-    <link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    
+    
+    <!--Simple SEO-->
 
+
+<meta name="robots" content=all />
+<meta name="google" content=all />
+<meta name="googlebot" content=all />
+<meta name="verify" content=all />
+    <!--Title-->
+
+<title>Android 중국 출시 삽질 노트. | GOD-BEOM Blog</title>
+
+<link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages/post.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+<link rel="stylesheet" href="/css/pages/comments.css">
+
+    <!--script-->
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>-->
+
+
+<script src="/js/thirdParty/gitment.browser.min.js"></script>
+<script>
+  var labels = "blog,gitment";
+  labels = labels.split(",");
+  var gitment = new Gitment({
+    id: window.location.pathname,
+    owner: "GeekaholicLin",
+    repo: "geekaholiclin.github.io",
+    oauth: {
+      client_id: "aa2215dfc8ee944d1205",
+      client_secret: "77cd2afa5d161bc0ab04639ed81300d808c6e22b"
+    },
+    perPage: "20",
+    labels: labels
+  });
+</script>
+
+    
+    
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">GOD-BEOM Blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">GOD BEOM ~</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://shin-beomchul.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-hex-android/android-china" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/05/hex-android/android-china/" class="article-date">
-  <time datetime="2018-07-05T05:10:47.000Z" itemprop="datePublished">2018-07-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Android 중국 출시 삽질 노트.
-    </h1>
-  
+<body id="normal">
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<style>
+    header{ top: 71px; position: absolute!important;}
+    #container{padding-top: 151px!important;}
+</style>
+<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
 
-      </header>
+<div id="wrap">
+    <header  style="position: absolute;" >
+    <div id="site-meta">
+        <a href="/" id="logo">
+            <h1 class="title">GOD-BEOM Blog</h1>
+        </a>
+        
+        <h2 class="subtitle">GOD BEOM ~</h2>
+        
+    </div>
+    <ul id="nav">
+        
+            <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
+        
+        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>검색</a></li>
+    </ul>
+</header>
+
+    <div id="container">
+        
+<ul id="sidebar">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>푸시</strong><br>android.  :  Baidu<br>IOS         :  APNS </p>
+    
+<li class="widget notification">
+    <i class="fa fa-bell-o"></i>
+    <div>
+        
+<p>안녕하세요 신범철 입니다.
+정보 <a href="https://github.com/Shin-beomChul"title="fork me" target="_blank"
+>Repo</a>
+</p>
+    </div>
+</li>
+
+    
+    
+
+    
+    
+<li class="widget widget-normal archive">
+  <h3 class="fa fa-archive widget-title">Archives</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/"><i class="fa" aria-hidden="true">11월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/"><i class="fa" aria-hidden="true">10월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/"><i class="fa" aria-hidden="true">9월 2018</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/"><i class="fa" aria-hidden="true">8월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">7월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/"><i class="fa" aria-hidden="true">6월 2018</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/"><i class="fa" aria-hidden="true">5월 2018</i></a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/"><i class="fa" aria-hidden="true">1월 2018</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/"><i class="fa" aria-hidden="true">12월 2017</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/"><i class="fa" aria-hidden="true">11월 2017</i></a><span class="archive-list-count">2</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal popular-posts" id="popular-posts">
+    <h3 class="fa fa-thermometer-3 widget-title">인기있는 블로그 글</h3>
+    <ul id="popular-content">
+        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+    </ul>
+</li>
+
+    
+    
+<li class="widget widget-normal tags">
+  <h3 class="fa fa-tags widget-title">태그</h3>
+  <div class="tagcloud-content">
+    
+      <a href="/tags/IOS/" style="font-size: 0.16rem; color: #477bb1">IOS</a> <a href="/tags/Android중국/" style="font-size: 0.14rem; color: #69c">Android중국</a> <a href="/tags/android/" style="font-size: 0.16rem; color: #477bb1">android</a> <a href="/tags/React-Native/" style="font-size: 0.14rem; color: #69c">React-Native</a> <a href="/tags/hybridFramework/" style="font-size: 0.16rem; color: #477bb1">hybridFramework</a> <a href="/tags/AWS/" style="font-size: 0.14rem; color: #69c">AWS</a> <a href="/tags/세미나-기록/" style="font-size: 0.14rem; color: #69c">세미나 기록</a> <a href="/tags/etc/" style="font-size: 0.2rem; color: #0a407c">etc</a> <a href="/tags/Kotlin/" style="font-size: 0.18rem; color: #295e97">Kotlin</a> <a href="/tags/Cordova/" style="font-size: 0.14rem; color: #69c">Cordova</a> <a href="/tags/swift/" style="font-size: 0.16rem; color: #477bb1">swift</a> <a href="/tags/RxJava2/" style="font-size: 0.14rem; color: #69c">RxJava2</a> <a href="/tags/작성중/" style="font-size: 0.14rem; color: #69c">작성중</a>
+  </div>
+</li>
+
+
+    
+    
+<li class="widget widget-normal friends-link">
+    <h3 class="fa fa-globe widget-title">링크</h3><br/>
+
+    
+        <a href="https://github.com/Shin-beomChul" class="fa" target="_blank">github</a>
+
+    
+
+</li>
+
+    
+</ul>
+
+
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="Android 중국 출시 삽질 노트.">
+                
+                Android 중국 출시 삽질 노트.
+                
+            </h1>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>null</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            Android중국
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2018/07/05</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="Android 중국 출시 삽질 노트."
+              data-leadcloud-url="/2018/07/05/hex-android/android-china/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+</div>
+
+            
+            
+        </div>
+        
+        <div id="post-body">
+            <h2 id="결제-문화"><a href="#결제-문화" class="headerlink" title="결제 문화"></a>결제 문화</h2><ul>
+<li><strong>오프라인 식당</strong></li>
+</ul>
+<ol>
+<li>음식점 테이블에 QR이 붙어있음.</li>
+<li>음식을 주문함.</li>
+<li>음식 영수증을 받음. (중국은 한국처럼 영수증 1개로 법인처리가 안되고 간이 영수증과 법적 효력이 있는  영수증으로 구분됨) </li>
+<li>테이블의 QR 코드 스캔 </li>
+<li>바로 금액 입력 창이 뜸.</li>
+<li>금액 입력.</li>
+<li>지문 혹은 비밀번호 입력</li>
+<li>결제완료</li>
+<li>결제 완료를 음식점 주인에게 보여주거나, 음식점 주인이 결제를 확인함.<br>특징 : 계산대가 없음 </li>
+</ol>
+<ul>
+<li>PC 온라인 쇼핑<ol>
+<li>물건을 담음.</li>
+<li>모바일 쇼핑 결제 요청 시 바로 비밀번호 입력창이 뜸(모바일)</li>
+</ol>
+</li>
+</ul>
+<h1 id="결제-개발"><a href="#결제-개발" class="headerlink" title="결제 개발"></a>결제 개발</h1><ul>
+<li>위챗결제 홈  <a href="https://pay.weixin.qq.com/wiki/doc/api/index.html" target="_blank" rel="noopener">https://pay.weixin.qq.com/wiki/doc/api/index.html</a></li>
+<li>위챗 개발 앱 데모 다운 <a href="https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=11_1" target="_blank" rel="noopener">https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=11_1</a>  ]</li>
+<li>위챗 개발 서버 데모 다운 <a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=11_1" target="_blank" rel="noopener">https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=11_1</a></li>
+<li>위챗 서명도구 <a href="https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_5" target="_blank" rel="noopener">https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=8_5</a></li>
+<li>위챗 결제 인터페이스 서명 확인도구 <a href="https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=20_1" target="_blank" rel="noopener">https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=20_1</a><ul>
+<li>기업에서 개발 한 모바일 애플리케이션 만 WeChat In-App Payment를 신청할 권한이 있음.</li>
+</ul>
+</li>
+</ul>
+<p>삽질방지 팁 :<br>Android<br>Android 샘플실행 시 2018년 9월 19일 기준 다음과 같은 문제 </p>
+<p>  -멀티덱스<br>  -libs 폴더에 jar파일 넣었을 경우 에러</p>
+<p> 샘플을 돌리기 위한 TODO</p>
+<ol>
+<li>libs제거. </li>
+<li>그래들 의존성 추가 implementation ‘com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.1.6’</li>
+<li>빌드 그래들 3.0.0으로 변경 ,<br>4.멀티덱스 Fix multiDexEnabled true ,    multiDexEnabled true</li>
+<li>실행 후 결제 테스트 : 네트워크 작업을 UI스레드에서 하고 있는 샘플??.. -&gt; 수정</li>
+</ol>
+<h2 id="경영허가증-발급"><a href="#경영허가증-발급" class="headerlink" title="경영허가증 발급"></a>경영허가증 발급</h2><h2 id="SW저작권증명서-발급"><a href="#SW저작권증명서-발급" class="headerlink" title="SW저작권증명서 발급"></a>SW저작권증명서 발급</h2><h2 id="푸시"><a href="#푸시" class="headerlink" title="푸시"></a><strong>푸시</strong></h2><p>android.  :  Baidu<br>IOS         :  APNS </p>
 <p><strong>1.baidu</strong><br><strong> 한국에서 푸시  발송 후 5분 ~ 30분 정도의 늦게 도착하는 경우가 있음 (빈도 10/8) </strong></p>
 <ul>
-<li>중국에서는 지연없이 단말기에 도달 할까?<br>   중국 출장 후 테스트 예정<pre><code>@결과 : 
+<li>중국에서는 지연없이 단말기에 도달 할까?<br>   중국 출장 후 테스트 예정<pre><code>@결과 :  중국에서 push 발행하더라도 느림. 바이두 푸시 자체가 구글처럼 빠릿하게 동작하지 않음 (CheckDate - 2018.09.10 In 북경 )
 </code></pre></li>
 </ul>
 <p>   <strong> 바이두 푸시 서버 개발 팁</strong></p>
@@ -119,138 +277,161 @@
 <p><strong>바이두 푸시 SDK로 개발된 앱을 타 마켓(360, Tencent 등)에 등록이 가능한가?</strong><br>@결과 :<br>: 이게 제일 중요함. 만약 이게 안되면 각 스토어별 푸시를 구현해야 햐고, 푸시뿐만아니라 리포팅 툴도 안된다는 얘기.<br>   즉, BuildScript 으로 분리하기 어려워질 수있고, 프로젝트 파편화가 생길 수 있다. </p>
 <p>  이 불확실성을 해결 하려면 역시 마켓에 앱을 등록해야 하는데. ICP 비안이 필요하다. 즉, 중국에 앱을 배포 하려 시도하는 업체라면<br>   SDK 다운받고 ,개발하고, 기획 하고 이런것 보다 우선 ICP 비안 먼저  발급 신청을 해라.<br>  단언코 말하건데, 개발 먼저하고 그때가서 ICP 발급 받은 뒤에 앱 스토어에 올리려고 하면 이래서 안됨 저래서 안됨. 리젝으로 후들겨 까이고<br>  이미 개발된 소스를 거의 전부 수정해야 할 수 있다<br>  중국 마켓의 정책은 수시로 바뀌며 트랜드도 변화무쌍하다.</p>
 
-      
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="/" alt="avatar"/>
+                
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>
+                  
+                  글쓴이:
+                  
+                    
+                    <a href="/">Beom Chul</a>
+                </li>
+                
+                <li>발행 일자: <span>2018-07-05  14:10:47</span></li>
+                
+                <li>업데이트 일자: <span>2018-09-19  22:13:42</span></li>
+                
+                <li class="post-category">
+                    카테고리:
+                    
+                </li>
+                <li class="post-tags">
+                    태그:
+                    
+                    <a href="/tags/Android중국/">Android중국</a>
+                    
+                </li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="http://example.com/alipay.jpg" alt="支付宝付款" class="donate-img">
+                
+                <img src="http://example.com/wechat.png" alt="微信付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        <a href="/2018/07/12/hex-etc/etc-aws-구축세션1/" class="pre-post fa fa-caret-left">aws-구축세션1</a>
+        
+        
+        <a href="/2018/06/21/hex-Rx/rx-RxJava2/" class="next-post fa">rx-RxJava2(작성중 1단계)</a>
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="https://shin-beomchul.github.io/2018/07/05/hex-android/android-china/" data-id="cjkdb81980006dusc42qtyyxl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android중국/">Android중국</a></li></ul>
-
-    </footer>
-  </div>
-  
     
-<nav id="article-nav">
-  
-    <a href="/2018/07/12/hex-etc/etc-aws-구축세션1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+    <div id="comments">
         
-          aws-구축세션1
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/06/21/hex-Rx/rx-RxJava2/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">rx-RxJava2(작성중 1단계)</div>
-    </a>
-  
-</nav>
 
-  
-</article>
+<script>
+  gitment.render(document.getElementById("comments"));
+</script>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AWS/">AWS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android중국/">Android중국</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOS/">IOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kotlin/">Kotlin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RxJava2/">RxJava2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/etc/">etc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/세미나-기록/">세미나 기록</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/작성중/">작성중</a></li></ul>
+
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/AWS/" style="font-size: 10px;">AWS</a> <a href="/tags/Android중국/" style="font-size: 10px;">Android중국</a> <a href="/tags/IOS/" style="font-size: 15px;">IOS</a> <a href="/tags/Kotlin/" style="font-size: 20px;">Kotlin</a> <a href="/tags/RxJava2/" style="font-size: 10px;">RxJava2</a> <a href="/tags/etc/" style="font-size: 10px;">etc</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a> <a href="/tags/세미나-기록/" style="font-size: 10px;">세미나 기록</a> <a href="/tags/작성중/" style="font-size: 10px;">작성중</a>
-    </div>
-  </div>
+</div>
 
-  
+
+    </div>
+    <footer id="footer">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">6월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">12월 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">11월 2017</a></li></ul>
+    <div class="social">
+        
+        <a href="https://www.example1.com" class="fa fa-free-code-camp" target="_blank" title="freecodecamp"></a>
+        
+        <a href="https://www.example2.com" class="fa fa-github" target="_blank" title="Follow me~"></a>
+        
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+    <div>
         
-          <li>
-            <a href="/2018/07/12/hex-etc/etc-aws-구축세션1/">aws-구축세션1</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/05/hex-android/android-china/">Android 중국 출시 삽질 노트.</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/21/hex-Rx/rx-RxJava2/">rx-RxJava2(작성중 1단계)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/24/hex-etc/etc-품질관리/">품질관리</a>
-          </li>
-        
-          <li>
-            <a href="/2018/05/18/hex-etc/etc-database/">사내 세미나  - MySQL Tips</a>
-          </li>
-        
-      </ul>
+        <a href="/" class="copyright-links">Beom Chul</a>&copy;2015 - 2018.All Rights
+        Reserved.
     </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 Beom Chul<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> | Theme by <a
+                href="https://github.com/GeekaholicLin" class="copyright-links" target="_blank">GeekaholicLin</a>
+    </p>
+    
+    
+    <p>
+        <span id="busuanzi_container_site_uv" class="fa fa-bar-chart">
+         <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 
+        </span>
+    </p>
+    
 </footer>
-    </div>
-    <nav id="mobile-nav">
+
+</div>
+    <ul id="tools">
+    <li class="totop-btn fa fa-angle-up"></li>
+    <li class="exchange-btn fa fa-exchange"></li>
   
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    <li class="toc-btn fa fa-list-ul"></li>
+    
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
+    
+</ul>
+<p id="process"></p>
+<div id="search-overlay">
+    <div class="search-area-wrap">
+        <div id="search-area">
+            <div class="input-wrap focus">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="search-input" autofocus autocomplete="off" type="text"
+                       placeholder="search this website..."/>
+            </div>
+            <ul id="search-result">
+                <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#결제-문화"><span class="toc-number">1.</span> <span class="toc-text">결제 문화</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#결제-개발"><span class="toc-number"></span> <span class="toc-text">결제 개발</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#경영허가증-발급"><span class="toc-number">1.</span> <span class="toc-text">경영허가증 발급</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SW저작권증명서-발급"><span class="toc-number">2.</span> <span class="toc-text">SW저작권증명서 발급</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#푸시"><span class="toc-number">3.</span> <span class="toc-text">푸시</span></a></li></ol>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    //theme config datas
+    var copyrightObj = {};
+    copyrightObj.enable = 'true';
+    copyrightObj.triggerCopyLength = '200';
+    copyrightObj.appendText = '商业转载请联系作者获得授权,非商业转载请注明出处 © example';
+    var leancloudObj = {};
+    leancloudObj.enable = 'true';
+    leancloudObj.className = 'BlogCounter';
+    leancloudObj.limits = '10';
+</script>
+<script type="text/javascript">
+    var search = {};
+    var search_path = "search.xml";
+    if (!search_path) {
+        search_path = "search.xml";
+    }
+    search.path = "/" + search_path;
+    search.func =  _ajax.init();
+</script>
+<script src="/js/app.js"></script>
 
-  </div>
+
 </body>
 </html>

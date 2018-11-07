@@ -1,0 +1,420 @@
+<!doctype html>
+<html>
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable"  content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no">
+    
+    
+    <!--Simple SEO-->
+
+
+<meta name="robots" content=all />
+<meta name="google" content=all />
+<meta name="googlebot" content=all />
+<meta name="verify" content=all />
+    <!--Title-->
+
+<title>SPA With cordova + Vue.js + webpack + Vuetify | GOD-BEOM Blog</title>
+
+<link rel="alternate" href="/atom.xml" title="GOD-BEOM Blog" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/pages/post.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/thirdParty/highlight/github.css">
+<link rel="stylesheet" href="/css/pages/comments.css">
+
+    <!--script-->
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>-->
+
+
+<script src="/js/thirdParty/gitment.browser.min.js"></script>
+<script>
+  var labels = "blog,gitment";
+  labels = labels.split(",");
+  var gitment = new Gitment({
+    id: window.location.pathname,
+    owner: "GeekaholicLin",
+    repo: "geekaholiclin.github.io",
+    oauth: {
+      client_id: "aa2215dfc8ee944d1205",
+      client_secret: "77cd2afa5d161bc0ab04639ed81300d808c6e22b"
+    },
+    perPage: "20",
+    labels: labels
+  });
+</script>
+
+    
+    
+</head>
+
+<body id="normal">
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<style>
+    header{ top: 71px; position: absolute!important;}
+    #container{padding-top: 151px!important;}
+</style>
+<div style="position:fixed;z-index:9999;left:0;top:0;width:100%;height:70px;background-color:#e0e0e0;color:#396CA5;border-bottom:1px solid #cecece;text-align:center;line-height:70px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<div id="wrap">
+    <header  style="position: absolute;" >
+    <div id="site-meta">
+        <a href="/" id="logo">
+            <h1 class="title">GOD-BEOM Blog</h1>
+        </a>
+        
+        <h2 class="subtitle">GOD BEOM ~</h2>
+        
+    </div>
+    <ul id="nav">
+        
+            <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+        
+            <li><a href="/atom.xml"><i class="fa fa-rss"></i>RSS</a></li>
+        
+        <li id="search"><a href="javascript:void(0)"><i class="fa fa-search"></i>검색</a></li>
+    </ul>
+</header>
+
+    <div id="container">
+        
+<ul id="sidebar">
+    
+    
+<li class="widget notification">
+    <i class="fa fa-bell-o"></i>
+    <div>
+        
+<p>안녕하세요 신범철 입니다.
+정보 <a href="https://github.com/Shin-beomChul"title="fork me" target="_blank"
+>Repo</a>
+</p>
+    </div>
+</li>
+
+    
+    
+
+    
+    
+<li class="widget widget-normal archive">
+  <h3 class="fa fa-archive widget-title">Archives</h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/"><i class="fa" aria-hidden="true">11월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/"><i class="fa" aria-hidden="true">10월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/"><i class="fa" aria-hidden="true">9월 2018</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/"><i class="fa" aria-hidden="true">8월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">7월 2018</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/"><i class="fa" aria-hidden="true">6월 2018</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/"><i class="fa" aria-hidden="true">5월 2018</i></a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/"><i class="fa" aria-hidden="true">1월 2018</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/"><i class="fa" aria-hidden="true">12월 2017</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/"><i class="fa" aria-hidden="true">11월 2017</i></a><span class="archive-list-count">2</span></li></ul>
+</li>
+
+
+    
+    
+<li class="widget widget-normal popular-posts" id="popular-posts">
+    <h3 class="fa fa-thermometer-3 widget-title">인기있는 블로그 글</h3>
+    <ul id="popular-content">
+        <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+    </ul>
+</li>
+
+    
+    
+<li class="widget widget-normal tags">
+  <h3 class="fa fa-tags widget-title">태그</h3>
+  <div class="tagcloud-content">
+    
+      <a href="/tags/IOS/" style="font-size: 0.16rem; color: #477bb1">IOS</a> <a href="/tags/Android중국/" style="font-size: 0.14rem; color: #69c">Android중국</a> <a href="/tags/android/" style="font-size: 0.16rem; color: #477bb1">android</a> <a href="/tags/React-Native/" style="font-size: 0.14rem; color: #69c">React-Native</a> <a href="/tags/hybridFramework/" style="font-size: 0.16rem; color: #477bb1">hybridFramework</a> <a href="/tags/AWS/" style="font-size: 0.14rem; color: #69c">AWS</a> <a href="/tags/세미나-기록/" style="font-size: 0.14rem; color: #69c">세미나 기록</a> <a href="/tags/etc/" style="font-size: 0.2rem; color: #0a407c">etc</a> <a href="/tags/Kotlin/" style="font-size: 0.18rem; color: #295e97">Kotlin</a> <a href="/tags/Cordova/" style="font-size: 0.14rem; color: #69c">Cordova</a> <a href="/tags/swift/" style="font-size: 0.16rem; color: #477bb1">swift</a> <a href="/tags/RxJava2/" style="font-size: 0.14rem; color: #69c">RxJava2</a> <a href="/tags/작성중/" style="font-size: 0.14rem; color: #69c">작성중</a>
+  </div>
+</li>
+
+
+    
+    
+<li class="widget widget-normal friends-link">
+    <h3 class="fa fa-globe widget-title">링크</h3><br/>
+
+    
+        <a href="https://github.com/Shin-beomChul" class="fa" target="_blank">github</a>
+
+    
+
+</li>
+
+    
+</ul>
+
+
+        <div id="main">
+    <article id="post">
+        <div id="post-header">
+
+            <h1 id="SPA With cordova + Vue.js + webpack + Vuetify">
+                
+                SPA With cordova + Vue.js + webpack + Vuetify
+                
+            </h1>
+            <div class="article-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+        <span>null</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+         <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            hybridFramework
+            
+        </span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta ">2018/11/01</span>
+    </span>
+    
+    
+    <span class="fa-wrap">
+            <i class="fa fa-thermometer-three-quarters"></i>
+        <span class="hits hits-meta " data-leadcloud-title="SPA With cordova + Vue.js + webpack + Vuetify"
+              data-leadcloud-url="/2018/11/01/hex-cordova/cordova/"><i class="fa fa-spinner fa-spin"></i></span>
+    </span>
+    
+    
+</div>
+
+            
+            
+        </div>
+        
+        <div id="post-body">
+            <h1 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h1><ul>
+<li>Cordova SPA App의 한계는 초기로딩 속도를 제외하고 WebApp넘어 설 수 없음(인터렉션 관점)</li>
+<li>Native WebView App VS Cordova WebView App은 성능상 동일</li>
+<li>SPA는 웹으로 다운받는 프로그램(Single Page == 어플리케이션)</li>
+<li>Cordova + SPA : Single Page를 App이 가지고 있어 초기 로딩 속도가 빠름.</li>
+<li>SPA web서비스가 이미 개발되어 있고 빠르게 App으로의 전환시 타 방법에 비해 가장 쉽다.(ReactNative, Native App)<br>단, SPA가 아니라 일반 Page요청 기반의 Web이라면 Controller부분을 App에서 개발 필요</li>
+</ul>
+<h1 id="Cordova-패키지-매니져-설치"><a href="#Cordova-패키지-매니져-설치" class="headerlink" title="Cordova 패키지 매니져 설치"></a>Cordova 패키지 매니져 설치</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cordova</span><br><span class="line">npm install -g vue-cli</span><br></pre></td></tr></table></figure>
+<h1 id="프로젝트-생성"><a href="#프로젝트-생성" class="headerlink" title="프로젝트 생성"></a>프로젝트 생성</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">cordova create VueApp com.beom.house</span><br><span class="line">vue init webpack VueApp com.beom.house</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">result : (의미 없음)</span><br><span class="line">? Project name todo-mobile-app-cordova-vue</span><br><span class="line">? Project description cordova-with-vue</span><br><span class="line">? Author Shin BeomChul &lt;sbc0830@osstem.com&gt;</span><br><span class="line">? Vue build standalone</span><br><span class="line">? Install vue-router? Yes</span><br><span class="line">? Use ESLint to lint your code? Yes</span><br><span class="line">? Pick an ESLint preset Standard</span><br><span class="line">? Set up unit tests Yes</span><br><span class="line">? Pick a test runner jest</span><br><span class="line">? Setup e2e tests with Nightwatch? Yes</span><br><span class="line">? Should we run `npm install` for you after the project has been created? (recommended) npm</span><br><span class="line"></span><br><span class="line">running % init ....</span><br></pre></td></tr></table></figure>
+<h1 id="www-삭제"><a href="#www-삭제" class="headerlink" title="./www 삭제"></a>./www 삭제</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd VueApp</span><br><span class="line">sudo rm -r www/*</span><br><span class="line"># Password: ************</span><br></pre></td></tr></table></figure>
+<h1 id="VueApp-config-index-js-수정"><a href="#VueApp-config-index-js-수정" class="headerlink" title="{VueApp}/config/index.js  수정"></a>{VueApp}/config/index.js  수정</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">build: &#123;</span><br><span class="line">    // Template for index.html</span><br><span class="line">    index: path.resolve(__dirname, &apos;../www/dist/index.html&apos;),</span><br><span class="line">    // Paths</span><br><span class="line">    assetsRoot: path.resolve(__dirname, &apos;../www/dist&apos;),</span><br><span class="line">    assetsSubDirectory: &apos;static&apos;,</span><br><span class="line">    assetsPublicPath: &apos;&apos;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="VueApp-config-xml-수정"><a href="#VueApp-config-xml-수정" class="headerlink" title="{VueApp}config.xml 수정"></a>{VueApp}config.xml 수정</h1><p>코르도바 실행 시 Vue 빌드 index로 변경.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;content src=”dist/index.html” /&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="npm-Build"><a href="#npm-Build" class="headerlink" title="npm Build"></a>npm Build</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<h1 id="android-SDK-툴-설치"><a href="#android-SDK-툴-설치" class="headerlink" title="android SDK 툴 설치"></a>android SDK 툴 설치</h1><h1 id="플랫폼-추가"><a href="#플랫폼-추가" class="headerlink" title="플랫폼 추가"></a>플랫폼 추가</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;VueApp&#125;/cordova platform add android</span><br><span class="line">&#123;VueApp&#125;/cordova platform add ios</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Android</li>
+<li>IOS</li>
+<li>Blackberry</li>
+<li>OSX</li>
+<li>WebOS</li>
+<li>Windows</li>
+<li>Browser</li>
+</ol>
+<h1 id="android-gradle-CLI-설치"><a href="#android-gradle-CLI-설치" class="headerlink" title="android gradle  CLI 설치"></a>android gradle  CLI 설치</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://gradle.org/install/ 참조</span><br></pre></td></tr></table></figure>
+<h1 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cordova run android</span><br></pre></td></tr></table></figure>
+<h1 id="자-이제-수정하고-반영해보자"><a href="#자-이제-수정하고-반영해보자" class="headerlink" title="자 이제 수정하고 반영해보자."></a>자 이제 수정하고 반영해보자.</h1><ul>
+<li>Step1. Vue.js 수정.</li>
+<li>Step2. npm run build </li>
+<li>Step3. cordova run android </li>
+</ul>
+<h1 id="Vue빌드-amp-App-Install-쉘스크립트-추가"><a href="#Vue빌드-amp-App-Install-쉘스크립트-추가" class="headerlink" title="+  Vue빌드 &amp; App Install 쉘스크립트 추가."></a>+  Vue빌드 &amp; App Install 쉘스크립트 추가.</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo sh rr.sh a // android</span><br><span class="line">sudo sh rr.sh i // ios</span><br></pre></td></tr></table></figure>
+<h1 id="삽질-꿀팁"><a href="#삽질-꿀팁" class="headerlink" title="#삽질 꿀팁"></a>#삽질 꿀팁</h1><h1 id="CodePush-앱을-웹-처럼-업데이트-ThinClient같지만-리치Client"><a href="#CodePush-앱을-웹-처럼-업데이트-ThinClient같지만-리치Client" class="headerlink" title="CodePush 앱을 웹 처럼 업데이트, ThinClient같지만 리치Client ,"></a>CodePush 앱을 웹 처럼 업데이트, ThinClient같지만 리치Client ,</h1><ul>
+<li>git nordnet/hot-code-push 곧 서비스 중지 - (18.09.30 발표)</li>
+<li>괜찮아 MS가 유지함<br><a href="https://docs.microsoft.com/en-us/appcenter/distribution/codepush/" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/appcenter/distribution/codepush/</a>  </li>
+</ul>
+<h1 id="ignore-대상"><a href="#ignore-대상" class="headerlink" title="ignore 대상"></a>ignore 대상</h1><p>: node_modules ==  npm run build<br>: platforms == 땡겨받고 $ cordovasub platform add {yourFlatform}</p>
+<h1 id="live-서버-npm-run-dev"><a href="#live-서버-npm-run-dev" class="headerlink" title="live 서버 :  npm run dev"></a>live 서버 :  npm run dev</h1><p>이렇게 개발하다가 이제 됐나… 싶으면  </p>
+<ul>
+<li>Step1. npm run build </li>
+<li>Step2. cordova run android </li>
+</ul>
+<h1 id="cordova-run-ios-가-안된다"><a href="#cordova-run-ios-가-안된다" class="headerlink" title="cordova run ios 가 안된다."></a>cordova run ios 가 안된다.</h1><p> “ios-deploy was not found. Please download, build and install version 1.9.2 or greater from <a href="https://github.com/phonegap/ios-deploy" target="_blank" rel="noopener">https://github.com/phonegap/ios-deploy</a> into your path, or do ‘npm install -g ios-deploy’”</p>
+<p> 해결 :  <a href="https://github.com/ios-control/ios-deploy/issues/346" target="_blank" rel="noopener">https://github.com/ios-control/ios-deploy/issues/346</a></p>
+<h1 id="cordova-App-에서-mode-history하면-최초-컴포넌트를-불러오지-못한다"><a href="#cordova-App-에서-mode-history하면-최초-컴포넌트를-불러오지-못한다" class="headerlink" title="cordova (App)에서 mode: history하면 최초 컴포넌트를 불러오지 못한다."></a>cordova (App)에서 mode: history하면 최초 컴포넌트를 불러오지 못한다.</h1><p><a href="https://www.npmjs.com/package/vue-cli-plugin-cordova" target="_blank" rel="noopener">https://www.npmjs.com/package/vue-cli-plugin-cordova</a></p>
+<p><a href="https://forum.quasar-framework.org/topic/726/history-mode-for-web-and-not-for-cordova/11" target="_blank" rel="noopener">https://forum.quasar-framework.org/topic/726/history-mode-for-web-and-not-for-cordova/11</a> </p>
+<p>#cordova 최초시작 페이지 설정<br>config/config.xml<br>  <!--<content src="dist/index.html" />--></p>
+<h1 id="bashsrc-Or-bash-profile-에-다음과-같이-써놓으면-참-편함-매번-터미널에서-cd-cd-cd-안해도-됩니다"><a href="#bashsrc-Or-bash-profile-에-다음과-같이-써놓으면-참-편함-매번-터미널에서-cd-cd-cd-안해도-됩니다" class="headerlink" title="~./bashsrc Or ~/.bash_profile 에 다음과 같이 써놓으면 참 편함 매번 터미널에서 cd..cd..cd 안해도 됩니다."></a>~./bashsrc Or ~/.bash_profile 에 다음과 같이 써놓으면 참 편함 매번 터미널에서 cd..cd..cd 안해도 됩니다.</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//your bash </span><br><span class="line">~/.bash_profile</span><br><span class="line"> //OR</span><br><span class="line">~/.bashsrc</span><br></pre></td></tr></table></figure>
+<p>출처<br>폰트 관련 : <a href="https://medium.com/@valeriocapogna/how-to-setup-a-cordova-app-using-vue-js-8ba1315b9666" target="_blank" rel="noopener">https://medium.com/@valeriocapogna/how-to-setup-a-cordova-app-using-vue-js-8ba1315b9666</a><br>최초 세팅 관련 : <a href="https://itnext.io/make-hybrid-platform-cordova-vue-webpack-2fb7031c4f9b" target="_blank" rel="noopener">https://itnext.io/make-hybrid-platform-cordova-vue-webpack-2fb7031c4f9b</a></p>
+
+        </div>
+        <div id="post-footer">
+            <div class="avatar" >
+                <img src="/" alt="avatar"/>
+                
+                
+            </div>
+            <ul class="author-profile-section">
+                <li>
+                  
+                  글쓴이:
+                  
+                    
+                    <a href="/">Beom Chul</a>
+                </li>
+                
+                <li>발행 일자: <span>2018-11-01  10:54:12</span></li>
+                
+                <li>업데이트 일자: <span>2018-11-06  16:31:32</span></li>
+                
+                <li class="post-category">
+                    카테고리:
+                    
+                </li>
+                <li class="post-tags">
+                    태그:
+                    
+                    <a href="/tags/hybridFramework/">hybridFramework</a>
+                    
+                    <a href="/tags/Cordova/">Cordova</a>
+                    
+                </li>
+                
+            </ul>
+            <div id="donate-wrap">
+                
+                
+                
+                <img src="http://example.com/alipay.jpg" alt="支付宝付款" class="donate-img">
+                
+                <img src="http://example.com/wechat.png" alt="微信付款" class="donate-img">
+                
+                
+            </div>
+        </div>
+    </article>
+    <div class="article-nav">
+        
+        <a href="/2018/11/06/hex-etc/gitPage-lyion테마적용/" class="pre-post fa fa-caret-left">gitPage-lyion테마적용</a>
+        
+        
+        <a href="/2018/10/26/hex-ReactNative/reactNative/" class="next-post fa">reactNative</a>
+        
+    </div>
+    
+    <div id="comments">
+        
+
+<script>
+  gitment.render(document.getElementById("comments"));
+</script>
+
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+    <footer id="footer">
+    
+    <div class="social">
+        
+        <a href="https://www.example1.com" class="fa fa-free-code-camp" target="_blank" title="freecodecamp"></a>
+        
+        <a href="https://www.example2.com" class="fa fa-github" target="_blank" title="Follow me~"></a>
+        
+    </div>
+    
+    <div>
+        
+        <a href="/" class="copyright-links">Beom Chul</a>&copy;2015 - 2018.All Rights
+        Reserved.
+    </div>
+    <p>Powered by <a href="https://hexo.io" class="copyright-links" target="_blank">Hexo</a> | Theme by <a
+                href="https://github.com/GeekaholicLin" class="copyright-links" target="_blank">GeekaholicLin</a>
+    </p>
+    
+    
+    <p>
+        <span id="busuanzi_container_site_uv" class="fa fa-bar-chart">
+         <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 
+        </span>
+    </p>
+    
+</footer>
+
+</div>
+    <ul id="tools">
+    <li class="totop-btn fa fa-angle-up"></li>
+    <li class="exchange-btn fa fa-exchange"></li>
+  
+    <li class="toc-btn fa fa-list-ul"></li>
+    
+    
+
+    
+    <li class="comment-btn fa fa-comments-o">
+        <a href="#comments" title="comments"></a>
+    </li>
+    
+</ul>
+<p id="process"></p>
+<div id="search-overlay">
+    <div class="search-area-wrap">
+        <div id="search-area">
+            <div class="input-wrap focus">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input id="search-input" autofocus autocomplete="off" type="text"
+                       placeholder="search this website..."/>
+            </div>
+            <ul id="search-result">
+                <li class="load-first"><i class="fa fa-spinner fa-pulse"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TL-DR"><span class="toc-number">1.</span> <span class="toc-text">TL;DR</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Cordova-패키지-매니져-설치"><span class="toc-number">2.</span> <span class="toc-text">Cordova 패키지 매니져 설치</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#프로젝트-생성"><span class="toc-number">3.</span> <span class="toc-text">프로젝트 생성</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#www-삭제"><span class="toc-number">4.</span> <span class="toc-text">./www 삭제</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VueApp-config-index-js-수정"><span class="toc-number">5.</span> <span class="toc-text">{VueApp}/config/index.js  수정</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#VueApp-config-xml-수정"><span class="toc-number">6.</span> <span class="toc-text">{VueApp}config.xml 수정</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#npm-Build"><span class="toc-number">7.</span> <span class="toc-text">npm Build</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#android-SDK-툴-설치"><span class="toc-number">8.</span> <span class="toc-text">android SDK 툴 설치</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#플랫폼-추가"><span class="toc-number">9.</span> <span class="toc-text">플랫폼 추가</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#android-gradle-CLI-설치"><span class="toc-number">10.</span> <span class="toc-text">android gradle  CLI 설치</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Run"><span class="toc-number">11.</span> <span class="toc-text">Run</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#자-이제-수정하고-반영해보자"><span class="toc-number">12.</span> <span class="toc-text">자 이제 수정하고 반영해보자.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue빌드-amp-App-Install-쉘스크립트-추가"><span class="toc-number">13.</span> <span class="toc-text">+  Vue빌드 & App Install 쉘스크립트 추가.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#삽질-꿀팁"><span class="toc-number">14.</span> <span class="toc-text">#삽질 꿀팁</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CodePush-앱을-웹-처럼-업데이트-ThinClient같지만-리치Client"><span class="toc-number">15.</span> <span class="toc-text">CodePush 앱을 웹 처럼 업데이트, ThinClient같지만 리치Client ,</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ignore-대상"><span class="toc-number">16.</span> <span class="toc-text">ignore 대상</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#live-서버-npm-run-dev"><span class="toc-number">17.</span> <span class="toc-text">live 서버 :  npm run dev</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cordova-run-ios-가-안된다"><span class="toc-number">18.</span> <span class="toc-text">cordova run ios 가 안된다.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cordova-App-에서-mode-history하면-최초-컴포넌트를-불러오지-못한다"><span class="toc-number">19.</span> <span class="toc-text">cordova (App)에서 mode: history하면 최초 컴포넌트를 불러오지 못한다.</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bashsrc-Or-bash-profile-에-다음과-같이-써놓으면-참-편함-매번-터미널에서-cd-cd-cd-안해도-됩니다"><span class="toc-number">20.</span> <span class="toc-text">~./bashsrc Or ~/.bash_profile 에 다음과 같이 써놓으면 참 편함 매번 터미널에서 cd..cd..cd 안해도 됩니다.</span></a></li></ol>
+
+
+
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    //theme config datas
+    var copyrightObj = {};
+    copyrightObj.enable = 'true';
+    copyrightObj.triggerCopyLength = '200';
+    copyrightObj.appendText = '商业转载请联系作者获得授权,非商业转载请注明出处 © example';
+    var leancloudObj = {};
+    leancloudObj.enable = 'true';
+    leancloudObj.className = 'BlogCounter';
+    leancloudObj.limits = '10';
+</script>
+<script type="text/javascript">
+    var search = {};
+    var search_path = "search.xml";
+    if (!search_path) {
+        search_path = "search.xml";
+    }
+    search.path = "/" + search_path;
+    search.func =  _ajax.init();
+</script>
+<script src="/js/app.js"></script>
+
+
+</body>
+</html>
